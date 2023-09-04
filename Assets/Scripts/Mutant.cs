@@ -14,32 +14,12 @@ public class Mutant : MonoBehaviour
     public Foot LeftFoot;
     public Foot RightFoot;
     public Body MainBody;
-    public string Name  ;
+    public string Name;
     public Mutant(string name)
     {
         name = Name;
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.GetComponent<Hand>() != null)
-        {
-            Hand hand = other.gameObject.GetComponent<Hand>();
-            if (hand.BelongsTo != this)
-            {
-                print(this.name + "was hit by" + hand.BelongsTo.name);
-                TakeDamage(10f);
-            }
-        }
-        if (other.gameObject.GetComponent<Foot>() != null)
-        {
-            Foot foot = other.gameObject.GetComponent<Foot>();
-            if (foot.BelongsTo != this)
-            {
-                print(this.name + "was hit by" + foot.BelongsTo.name);
-                TakeDamage(10f);
-            }
-        }
-    }
+   
     // Start is called before the first frame update
     void Start()
     {

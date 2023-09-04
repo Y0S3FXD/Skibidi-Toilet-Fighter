@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Body : MonoBehaviour
+public class Body : BodyPart
 {
-    public Mutant BelongsTo;
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Hand>() != null)
@@ -24,7 +23,7 @@ public class Body : MonoBehaviour
                 print(BelongsTo.name + " was hit by foot by " + foot.BelongsTo.name);
             }
         }
-        else if (other.gameObject.GetComponent<Body>() != null)
+        else if (other.gameObject.GetComponent<BodyPart>() != null)
         {
             Body body = other.gameObject.GetComponent<Body>();
             if (body.BelongsTo != BelongsTo)

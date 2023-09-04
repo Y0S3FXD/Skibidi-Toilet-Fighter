@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Foot : MonoBehaviour
+public class Foot : BodyPart
 {
-    public Mutant BelongsTo;
 }
