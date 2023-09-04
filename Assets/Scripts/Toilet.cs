@@ -1,21 +1,17 @@
+using System.Runtime.InteropServices;
+using System.ComponentModel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mutant : MonoBehaviour
+public class Toilet : Skibidi
 {
     public float Health = 100f;
     public bool IsPlayerOne = false;
     public Animator Anim;
-    public Mutant Opponent;
-
-    public Hand LeftHand;
-    public Hand RightHand;
-    public Foot LeftFoot;
-    public Foot RightFoot;
+    public Toilet Opponent;
     public Body MainBody;
     public Head MainHead;
-
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +22,7 @@ public class Mutant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (IsPlayerOne)
         {
             if (Opponent != null && MainBody != null)
@@ -64,8 +61,40 @@ public class Mutant : MonoBehaviour
                 HeadButtAnimation();
             }
         }
+        ifelse (IsPlayerOne == false)
+        {
+            if (Opponent != null && MainBody != null)
+            {
+                MainBody.transform.LookAt(Opponent.MainBody.transform);
+            }
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                PunchAnimation();
+            }
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                KickAnimation();
+            }
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                KissAnimation();
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                MoveTowards();
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                MoveAwayFrom();
+            }
+            if (Input.GetKey(KeyCode.V))
+            {
+                HeadButtAnimation();
+            }
+        }
 
     }
+    
     private void MoveTowards()
     {
         Vector3 direction = Opponent.MainBody.transform.position - MainBody.transform.position;

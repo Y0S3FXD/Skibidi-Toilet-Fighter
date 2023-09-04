@@ -1,0 +1,45 @@
+@startuml
+
+class Program{
+    
+}
+
+class TOILET{
+    + string name
+    + List<items> items
+    + public bool IsPlayerOne = false
+    --
+    + Toilet(string name, int health)
+    --
+    + void Start()
+    + void PrintChapters()
+    + {static} void WriteLine(String text)
+    - Chapter GetChapter(String title)
+}
+
+class Piss{
+}
+Class Skibidi{
+   + Skibidi Player_one = New Skibidi();
+   + Skibidi Player_Two = New Skibidi();
+}
+class Head{
+
+}
+Class HeadPunch{
+}
+
+class Arena{
+    Void Create_Arena()
+}
+class Attacks{
+ Random GiveDamage(int Dmg)
+}
+Attacks *--  Piss
+Attacks *--  HeadPunch
+Skibidi ..> TOILET
+Program ..> Attacks
+Program ..> Arena
+Skibidi ..> Head
+Skibidi .up.> Program
+@enduml

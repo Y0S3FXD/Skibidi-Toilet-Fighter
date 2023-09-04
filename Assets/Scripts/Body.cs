@@ -2,25 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Body : MonoBehaviour
+public class Body : BodyPart
 {
-    public Mutant BelongsTo;
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Hand>() != null)
+        if (other.gameObject.GetComponent<BodyPart>() != null)
         {
-            Hand hand = other.gameObject.GetComponent<Hand>();
-            if (hand.BelongsTo != BelongsTo)
+            Body body = other.gameObject.GetComponent<Body>();
+            if (body.BelongsTo != BelongsTo)
             {
-                print(BelongsTo.name + "was hit by" + hand.BelongsTo.name);
+                print(BelongsTo.name + " was hit by something " + body.BelongsTo.name);
             }
-        }
-    }
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Mainbody")
-        {
-            Debug.Log("The player has collided!");
         }
     }
 }
