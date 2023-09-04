@@ -1788,6 +1788,7 @@ MonoBehaviour:
   LeftFoot: {fileID: 4966665854522445166}
   RightFoot: {fileID: 4966665854171779038}
   MainBody: {fileID: 4966665855647292648}
+  Name: 
 --- !u!1 &4966665855571357344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,7 +1937,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1551404233133119750
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1953,7 +1954,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &4966665855647292649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1995,7 +1996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5458046b34d8d94f9bb3eaeea29ba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BelongsTo: {fileID: 0}
+  BelongsTo: {fileID: 4966665855168584006}
 --- !u!1 &5369217362729324002
 GameObject:
   m_ObjectHideFlags: 0
