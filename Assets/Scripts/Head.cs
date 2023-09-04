@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Head : BodyPart
 {
+    public Toilet BelongsTo;
 
 }
