@@ -61,7 +61,7 @@ public class Toilet : Skibidi
                 HeadButtAnimation();
             }
         }
-        ifelse (IsPlayerOne == false)
+        else if (IsPlayerOne == false)
         {
             if (Opponent != null && MainBody != null)
             {
@@ -94,7 +94,7 @@ public class Toilet : Skibidi
         }
 
     }
-    
+
     private void MoveTowards()
     {
         Vector3 direction = Opponent.MainBody.transform.position - MainBody.transform.position;

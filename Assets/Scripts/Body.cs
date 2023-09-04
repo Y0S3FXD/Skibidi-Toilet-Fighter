@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Body : BodyPart
 {
-    public Toilet BelongsTo;
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BodyPart>() != null)
+        if (other.gameObject.GetComponent<Body>() != null)
         {
             Body body = other.gameObject.GetComponent<Body>();
             if (body.BelongsTo != BelongsTo)
