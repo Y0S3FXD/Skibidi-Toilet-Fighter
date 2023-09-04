@@ -61,7 +61,7 @@ public class Toilet : Skibidi
                 HeadButtAnimation();
             }
         }
-        else if (IsPlayerOne == false)
+        ifelse (IsPlayerOne == false)
         {
             if (Opponent != null && MainBody != null)
             {

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Skibidi : MonoBehaviour
 {
-string Name;
-    public Skibidi(string name, int health = 100)
+    public Skibidi(string name= "skibidi")
     {
-        name = Name;
     }
 }
