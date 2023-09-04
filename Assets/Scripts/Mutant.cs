@@ -14,6 +14,7 @@ public class Mutant : MonoBehaviour
     public Foot LeftFoot;
     public Foot RightFoot;
     public Body MainBody;
+    public Head MainHead;
 
 
     // Start is called before the first frame update
@@ -58,6 +59,10 @@ public class Mutant : MonoBehaviour
             {
                 MoveAwayFrom();
             }
+            if (Input.GetKey(KeyCode.T))
+            {
+                HeadButtAnimation();
+            }
         }
 
     }
@@ -79,6 +84,10 @@ public class Mutant : MonoBehaviour
     {
         Anim.SetTrigger("Punch");
 
+    }
+    private void HeadButtAnimation()
+    {
+        Anim.SetTrigger("Headbutt");
     }
     private void KickAnimation()
     {
