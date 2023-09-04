@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Security.AccessControl;
 using UnityEngine;
+using System;
+
 public class Attack : MonoBehaviour
 {
     public float criticalDamage;
-    public void voiddamageDealt(Toilet opponent)
+
+    public void DamageDealt(Toilet opponent)
     {
-        Toilet.Health -= rnd.Next((criticalDamage * 0.66), criticalDamage);
+        float randomDamage = UnityEngine.Random.Range(criticalDamage * 0.66f, criticalDamage);
+        opponent.Health -= randomDamage;
     }
 }

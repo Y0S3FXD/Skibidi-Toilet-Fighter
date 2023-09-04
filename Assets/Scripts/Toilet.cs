@@ -1,3 +1,4 @@
+using System.Diagnostics.Contracts;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System.Collections;
@@ -12,11 +13,10 @@ public class Toilet : Skibidi
     public Toilet Opponent;
     public Body MainBody;
     public Head MainHead;
-
+    public Arena arena;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -32,13 +32,6 @@ public class Toilet : Skibidi
             if (Input.GetKeyDown(KeyCode.E))
             {
                 PunchAnimation();
-                void OnCollisionEnter(Collision collision)
-                {
-                    if (collision.gameObject.tag == "Opponent")
-                    {
-                        Debug.Log("The player has collided!");
-                    }
-                }
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -61,7 +54,7 @@ public class Toilet : Skibidi
                 HeadButtAnimation();
             }
         }
-        ifelse (IsPlayerOne == false)
+        else if (IsPlayerOne == false)
         {
             if (Opponent != null && MainBody != null)
             {
