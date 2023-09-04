@@ -1822,7 +1822,7 @@ GameObject:
   - component: {fileID: 4966665855168584007}
   - component: {fileID: 4966665855168584006}
   m_Layer: 0
-  m_Name: Mutant
+  m_Name: Toilet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

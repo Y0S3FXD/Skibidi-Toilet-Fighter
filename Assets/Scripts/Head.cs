@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Head : MonoBehaviour
+public class Head : BodyPart
 {
-    public Mutant BelongsTo;
 
 }
