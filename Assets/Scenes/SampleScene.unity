@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &32745944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32745946}
+  - component: {fileID: 32745945}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &32745945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32745944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d0c4fced5892d418047503e5fd02e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arenaPrefab: {fileID: 258426694}
+--- !u!4 &32745946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32745944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8520508, y: 0.43356127, z: -10.04253}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &40308554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +175,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918863652129306010, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6514689691281655856, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -144,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6514689691281655858, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0.46000004
       objectReference: {fileID: 0}
     - target: {fileID: 6514689691281655858, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_LocalPosition.z
@@ -182,6 +251,14 @@ PrefabInstance:
       propertyPath: Opponent
       value: 
       objectReference: {fileID: 1221595018}
+    - target: {fileID: 6514689691742604703, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514689692035989401, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6514689692035989403, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: BelongsTo
       value: 
@@ -571,13 +648,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68950683e4514464c880c8ed42e7a05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arenaPrefab: {fileID: 0}
   Health: 100
   IsPlayerOne: 0
   Anim: {fileID: 1817807399}
   Opponent: {fileID: 1223032902}
   MainBody: {fileID: 1221595018}
   MainHead: {fileID: 2111453217}
-  arena: {fileID: 0}
 --- !u!4 &1221595019
 Transform:
   m_ObjectHideFlags: 0
@@ -586,7 +663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221595017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: 2, z: 0}
+  m_LocalPosition: {x: 3.26, y: 0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -800,7 +877,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111453213}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.25
