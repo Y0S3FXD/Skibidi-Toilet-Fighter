@@ -4,7 +4,7 @@ using UnityEngine;
 public class Head : MonoBehaviour
 {
  Head head;
- public Head BelongsTo;
+ public Toilet BelongsTo;
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Head>() != null)
