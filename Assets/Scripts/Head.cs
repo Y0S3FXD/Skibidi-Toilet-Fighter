@@ -1,9 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Head : BodyPart
+public class Head : MonoBehaviour
 {
-
+ Head head;
+ public Head BelongsTo;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Head>() != null)
+        {
+             head = other.gameObject.GetComponent<Head>();
+            if (head.BelongsTo != BelongsTo)
+            {
+                print(BelongsTo.name + " was hit by something " + head.BelongsTo.name);
+            }
+        }
+    }
 }
-

@@ -5,13 +5,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Toilet : Skibidi
+public class Toilet : GameController
 {
     public float Health = 100f;
     public bool IsPlayerOne = false;
     public Animator Anim;
     public Toilet Opponent;
-    public Body MainBody;
+    public Toilet MainBody;
     public Head MainHead;
     public Arena arena;
     // Start is called before the first frame update
