@@ -1,4 +1,3 @@
-# Skibidi-Toilet-Fighter
 Must:
 -There must be atleast to controlable skibidi-toilets, opponents
 -The skibidi-toilets must have a stamina and health bar
