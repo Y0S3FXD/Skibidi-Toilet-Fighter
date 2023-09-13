@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +21,10 @@ public class Toilet : Skibidi
     // Update is called once per frame
     void Update()
     {
-
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
         if (IsPlayerOne)
         {
             if (Opponent != null && MainBody != null)
@@ -59,6 +61,7 @@ public class Toilet : Skibidi
             if (Input.GetKey(KeyCode.T))
             {
                 HeadButtAnimation();
+                HeadButt.useHeadButt(Opponent);
             }
         }
         else if (IsPlayerOne == false)
@@ -126,13 +129,4 @@ public class Toilet : Skibidi
     {
         Anim.SetTrigger("Kiss");
     }
-    private void TakeDamage(float damage)
-    {
-        Health -= damage;
-        if (Health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
 }

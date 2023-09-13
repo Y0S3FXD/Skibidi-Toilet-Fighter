@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Attacks : MonoBehaviour
+interface IAttack
 {
-
-
+    public void DealDamage(Toilet other);
 }

@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Arena : MonoBehaviour
 {
-
-
-
-
-private void SpawnHealthRegen(List<GameObject> HealthRegen)
+    private void SpawnHealthRegen(List<GameObject> HealthRegen)
     {
         if (HealthRegen.Count > 0)
         {

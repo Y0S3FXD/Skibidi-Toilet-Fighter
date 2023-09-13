@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Skibidi : MonoBehaviour
 {
-string Name;
-    public Skibidi(string name, int health = 100)
+    string Name;
+
+    void Start()
     {
-        name = Name;
+        Name = "Skibidi_" + Random.Range(0, 1000);
     }
 }
