@@ -1,34 +1,41 @@
 @startuml
-
-class SkibidiToilet {
-  - health: float
-  - stamina: float
-  + Attack()
-  + Dance()
-  + Regenerate()
-  + KnockOut()
+class items[
+     + health: int
+     + Stamina : int
+]
+class GameController{
+    
 }
 
-class Item {
-  - name: string
-  - effect: enum
+class TOILET{
+    + string name
+    + List<items> items
+    + public bool IsPlayerOne = false
+    --
+    + Toilet(string name, int health)
+    --
+    + void Start()
 }
 
-class Player {
-  - playerName: string
-  - score: int
-  + Move()
-  + UseItem()
-  + ShowScore()
+class Piss{
 }
 
-class GameController {
-  + StartGame()
-  + EndGame()
-  + CalculateScore()
+class Head{
+
+}
+Class HeadPunch{
 }
 
-SkibidiToilet --|> Item
-Player --|> GameController
-
+class Arena{
+    Void Create_Arena()
+}
+class Attacks{
+ Random GiveDamage(int Dmg)
+}
+Attacks *--  Piss
+Attacks *--  HeadPunch
+GameController ..> Attacks
+GameController ..> Arena
+GameController ..> TOILET
+TOILET ..> Head
 @enduml

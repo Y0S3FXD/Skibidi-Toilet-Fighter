@@ -4,12 +4,12 @@ using UnityEngine;
 public class Head : MonoBehaviour
 {
  Head head;
- public Head BelongsTo;
+ public Toilet BelongsTo;
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Head>() != null)
         {
-             head = other.gameObject.GetComponent<Head>();
+             Head head = other.gameObject.GetComponent<Head>();
             if (head.BelongsTo != BelongsTo)
             {
                 print(BelongsTo.name + " was hit by something " + head.BelongsTo.name);
@@ -17,3 +17,4 @@ public class Head : MonoBehaviour
         }
     }
 }
+
