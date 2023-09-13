@@ -12,23 +12,22 @@ public class Head : MonoBehaviour
         Body body = other.gameObject.GetComponent<Body>();
         Head head = other.gameObject.GetComponent<Head>();
 
-        if (body != null)
+        if (head != null && head.BelongsTo != null && BelongsTo != null)
         {
-                            print(BelongsTo.name + " was hit by something body  " + body.BelongsTo.name);
-
-            // Handle collision with Body component
-        }
-        else if (head != null)
-        {
-                            print(BelongsTo.name + " was hit by something head  " + head.BelongsTo.name);
-
+            print(BelongsTo.name + " was hit by head  from " + head.BelongsTo.name);
             // Handle collision with Head component
         }
-        else{
-            print("ignore " + other.name);
+        else if (body != null)
+        {
+            // Handle collision with Body component
+        }
+        else
+        {
+            // Handle collision with other colliders
         }
     }
 }
+
 
 }
 

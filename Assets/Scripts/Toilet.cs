@@ -13,7 +13,6 @@ public class Toilet : GameController
     public Toilet Opponent;
     public Toilet MainBody;
     public Head MainHead;
-    public Arena arena;
     // Start is called before the first frame update
     void Start()
     {
