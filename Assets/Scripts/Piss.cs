@@ -13,7 +13,7 @@ public class Piss : Attack
     {
         if (otherToilet.Health < 10)
         {
-            damageToDeal = 100;
+            damageToDeal = 100f;
         }
         DealDamage(otherToilet);
         Awake();
