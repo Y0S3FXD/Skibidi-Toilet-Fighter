@@ -119,7 +119,7 @@ public class Toilet : GameController
     {
         Anim.SetTrigger("Kiss");
     }
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         Health -= damage;
         if (Health <= 0)
