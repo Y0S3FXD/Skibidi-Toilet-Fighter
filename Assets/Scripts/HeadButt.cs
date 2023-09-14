@@ -7,13 +7,17 @@ public class HeadButt : Attack
     {
         damageToDeal = Random.Range(0, 15);
     }
-    public void useHeadButt(Toilet otherToilet)
+    public void UseHeadButt(Toilet otherToilet)
     {
-        if (otherToilet.OnCollisionEnter() == true)
+        if (otherToilet.IsCollidingWithPlayer == true)
         {
             if (otherToilet.Health < 10)
             {
                 float damageToDeal = 100f;
+            }
+            else
+            {
+                float damageToDeal = 10f;
             }
         }
         else

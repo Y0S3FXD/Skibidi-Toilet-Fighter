@@ -11,6 +11,7 @@ public class Toilet : Skibidi
     public Toilet Opponent;
     public Body MainBody;
     public Head MainHead;
+    public bool IsCollidingWithPlayer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +62,7 @@ public class Toilet : Skibidi
             if (Input.GetKey(KeyCode.T))
             {
                 HeadButtAnimation();
-                HeadButt.useHeadButt(Opponent);
+                HeadButt.UseHeadButt(Opponent);
             }
         }
         else if (IsPlayerOne == false)
