@@ -94,7 +94,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2685551242991301799}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -127,3 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def3c9fa110ff3e4c94c17a3e86d0ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BelongsTo: {fileID: 0}
+  criticalDamage: 0
+  PissSpawnPoint: {fileID: 0}
+  PissPreFap: {fileID: 0}
+  PissSpeed: 0.5

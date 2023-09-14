@@ -1,8 +1,5 @@
 @startuml
-class items[
-     + health: int
-     + Stamina : int
-]
+class items{}
 class GameController{
     
 }
