@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cfa0ae1c116a340a372c97b42bca9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BelongsTo: {fileID: 0}
+  criticalDamage: 1
   PissSpawnPoint: {fileID: 6210573885658474413}
   PissPreFap: {fileID: 2685551242991301799, guid: f3c4c051780a0da498ec8aba238363da, type: 3}
-  PissSpeed: 1
-  SpawnRate: 0.1
+  PissSpeed: 111
