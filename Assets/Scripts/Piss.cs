@@ -6,7 +6,7 @@ public class Piss : Attacks
 {
     public Transform PissSpawnPoint;
     public GameObject PissPreFap;
-    public float PissSpeed = 23.5f;
+    public float PissSpeed = 0.5f;
 
     private void Update()
     {
@@ -24,6 +24,6 @@ public class Piss : Attacks
     // Handle collisions with any object and destroy the "piss" object.
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject); // Destroy the "piss" object upon collision with any object.
+        Debug.Log("im gonna remove you next time");
     }
 }

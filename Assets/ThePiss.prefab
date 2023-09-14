@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 12
   m_CollisionDetection: 0
 --- !u!114 &827563765148587234
 MonoBehaviour:
@@ -127,8 +127,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def3c9fa110ff3e4c94c17a3e86d0ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BelongsTo: {fileID: 0}
-  criticalDamage: 0
-  PissSpawnPoint: {fileID: 0}
-  PissPreFap: {fileID: 0}
-  PissSpeed: 0.5

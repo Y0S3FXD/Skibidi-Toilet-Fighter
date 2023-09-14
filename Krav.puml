@@ -29,6 +29,10 @@ class Arena{
 class Attacks{
  Random GiveDamage(int Dmg)
 }
+class Stamina{
+
+}
+Piss *-- Stamina
 Attacks *--  Piss
 Attacks *--  HeadPunch
 GameController ..> Attacks
