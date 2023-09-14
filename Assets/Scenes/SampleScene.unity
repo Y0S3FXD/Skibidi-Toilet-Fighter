@@ -176,6 +176,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.827
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.356
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
@@ -195,9 +203,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465010, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: BelongsTo
+      value: 
+      objectReference: {fileID: 1223032902}
+    - target: {fileID: 4873622937253465010, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: PissSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873622937253465010, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: PissSpawnPoint
+      value: 
+      objectReference: {fileID: 447398096}
     - target: {fileID: 4918863652129306010, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244726953069168819, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244726953069168819, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6514689691281655856, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_Name
@@ -313,6 +341,11 @@ MonoBehaviour:
   floorPrefab: {fileID: 1894754162}
   wallPrefab: {fileID: 1388575651}
   arenaLight: {fileID: 705507994}
+--- !u!4 &447398096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4873622937253465009, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+  m_PrefabInstance: {fileID: 40308554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &556481682 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3321919801592875672, guid: 1ea1aec336ddef3438bc83aa2014b113, type: 3}
@@ -606,7 +639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1ea1aec336ddef3438bc83aa2014b113, type: 3}
       propertyPath: m_Name
-      value: Warrok W Kurniawan
+      value: Toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ea1aec336ddef3438bc83aa2014b113, type: 3}
+      propertyPath: m_TagString
+      value: Enemy1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 1ea1aec336ddef3438bc83aa2014b113, type: 3}
       propertyPath: m_Controller
