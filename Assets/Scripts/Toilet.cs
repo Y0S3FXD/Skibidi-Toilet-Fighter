@@ -13,6 +13,7 @@ public class Toilet : GameController
     public Toilet Opponent;
     public Toilet MainBody;
     public Head MainHead;
+    public  float movespeed  = 0.25f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,14 @@ public class Toilet : GameController
             {
                 HeadButtAnimation();
             }
+            if (Input.GetKey(KeyCode.A))
+            {
+                MoveToLeft();
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                MoveToRight();
+            }
         }
         else if (IsPlayerOne == false)
         {
@@ -83,23 +92,73 @@ public class Toilet : GameController
             {
                 HeadButtAnimation();
             }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                MoveToLeft();
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                MoveToRight();
+            }
         }
 
     }
 
     private void MoveTowards()
     {
-        Vector3 direction = Opponent.MainBody.transform.position - MainBody.transform.position;
-        Vector3 normalizedDirection = direction.normalized;
-        Vector3 movement = normalizedDirection * 0.01f;
+        // Define a forward direction vector (in Unity, forward is usually Vector3.forward).
+        Vector3 forwardDirection = Vector3.forward;
+
+        // You can adjust the speed by changing the multiplier.
+        float speed = movespeed;
+
+        // Calculate the movement vector.
+        Vector3 movement = forwardDirection * speed;
+
+        // Update the position to move the object forward.
         transform.position += movement;
     }
     private void MoveAwayFrom()
     {
-        Vector3 direction = Opponent.MainBody.transform.position - MainBody.transform.position;
-        Vector3 normalizedDirection = direction.normalized;
-        Vector3 movement = normalizedDirection * 0.01f;
-        transform.position -= movement;
+        // Define a backward direction vector (in Unity, backward is usually -Vector3.forward).
+        Vector3 backwardDirection = -Vector3.forward;
+
+        // You can adjust the speed by changing the multiplier.
+        float speed = movespeed;
+
+        // Calculate the movement vector.
+        Vector3 movement = backwardDirection * speed;
+
+        // Update the position to move the object backward.
+        transform.position += movement;
+    }
+    private void MoveToLeft()
+    {
+        // Define a left direction vector (in Unity, left is usually -Vector3.right).
+        Vector3 leftDirection = -Vector3.right;
+
+        // You can adjust the speed by changing the multiplier.
+        float speed = movespeed;
+
+        // Calculate the movement vector.
+        Vector3 movement = leftDirection * speed;
+
+        // Update the position to move the object to the left.
+        transform.position += movement;
+    }
+    private void MoveToRight()
+    {
+        // Define a right direction vector (in Unity, right is usually Vector3.right).
+        Vector3 rightDirection = Vector3.right;
+
+        // You can adjust the speed by changing the multiplier.
+        float speed = movespeed;
+
+        // Calculate the movement vector.
+        Vector3 movement = rightDirection * speed;
+
+        // Update the position to move the object to the right.
+        transform.position += movement;
     }
     private void PunchAnimation()
     {
