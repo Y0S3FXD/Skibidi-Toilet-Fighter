@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stamina : MonoBehaviour
+public class Stamina : Attacks
 {
     // The time it takes for the object to disappear.
     private float LifeTime = 3.0f;
@@ -21,6 +21,7 @@ public class Stamina : MonoBehaviour
             Debug.Log("Stamina hit an enemy: " + collision.gameObject.name);
             // Add your code to handle the collision with an enemy here.
             Destroy(gameObject); // Destroy the "Stamina" object that collided with an enemy.
+            TakeDamage(20f);
         }
         else
         {

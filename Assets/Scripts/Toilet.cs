@@ -7,16 +7,19 @@ using UnityEngine;
 
 public class Toilet : GameController
 {
-    public float Health = 100f;
+    public float MaxHealth = 100f;
+    public float CurrentHealth;
     public bool IsPlayerOne = false;
     public Animator Anim;
     public Toilet Opponent;
     public Toilet MainBody;
     public Head MainHead;
     public  float movespeed  = 0.25f; 
-    // Start is called before the first frame update
+    public HealthBar healthBar; 
     void Start()
     {
+        CurrentHealth += MaxHealth;
+        healthBar.SetMaxHealth(MaxHealth);
     }
 
     // Update is called once per frame
@@ -179,11 +182,8 @@ public class Toilet : GameController
     }
     public void TakeDamage(float damage)
     {
-        Health -= damage;
-        if (Health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        CurrentHealth -= damage;
+            healthBar.SetHealth(CurrentHealth);
     }
 
 }

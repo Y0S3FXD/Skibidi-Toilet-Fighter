@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Piss : Attacks
+public class Piss : Stamina
 {
     public Transform PissSpawnPoint;
     public GameObject PissPreFap;
@@ -19,11 +19,5 @@ public class Piss : Attacks
                 pissRigidbody.velocity = PissSpawnPoint.forward * PissSpeed;
             }
         }
-    }
-
-    // Handle collisions with any object and destroy the "piss" object.
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("im gonna remove you next time");
     }
 }

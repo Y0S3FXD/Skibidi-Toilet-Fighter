@@ -7,9 +7,9 @@ public class Attacks : MonoBehaviour
     public Toilet BelongsTo;
     public float criticalDamage;
 
-    public void GiveDamage(Toilet opponent)
+    public void TakeDamage(float randomDamage)
     {
-        float randomDamage = UnityEngine.Random.Range(criticalDamage * 0.66f, criticalDamage);
-        opponent.Health -= randomDamage;
+        
+        BelongsTo.healthBar.SetHealth(randomDamage)
     }
 }
