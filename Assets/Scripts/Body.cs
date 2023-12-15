@@ -9,6 +9,7 @@ public class Body : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Body got hit by " + collision.gameObject.name);
+        BelongsTo.TakeDamage(10f);
     }
 
 

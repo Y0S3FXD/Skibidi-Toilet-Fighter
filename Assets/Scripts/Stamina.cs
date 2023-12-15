@@ -19,7 +19,6 @@ public class Stamina : Attacks
             Debug.Log("Stamina hit an enemy: " + collision.gameObject.name);
             // Add your code to handle the collision with an enemy here.
             Destroy(gameObject); // Destroy the "Stamina" object that collided with an enemy.
-            TakeDamage(20f);
         }
         else
         {

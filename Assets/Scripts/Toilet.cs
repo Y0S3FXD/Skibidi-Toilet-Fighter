@@ -8,7 +8,7 @@ public class Toilet : GameController
     public Animator Anim;
     public Toilet Opponent;
     public HealthBar healthBar;
-    public float moveSpeed = 50.25f;
+    public float moveSpeed = 0.25f;
     private Rigidbody rb;
 
     void Start()
@@ -37,7 +37,7 @@ public class Toilet : GameController
         Vector3 movement = new Vector3(0.0f, 0.0f, moveHorizontal);
 
         // Apply the movement to the Rigidbody
-        rb.MovePosition(rb.position + movement * moveSpeed);
+        rb.MovePosition(rb.position + movement * moveSpeed* Time.fixedDeltaTime);
     }
 
     private void HandleRotation()
