@@ -1,8 +1,3 @@
-using System.Diagnostics.Contracts;
-using System.Runtime.InteropServices;
-using System.ComponentModel;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Toilet : GameController
@@ -12,178 +7,81 @@ public class Toilet : GameController
     public bool IsPlayerOne = false;
     public Animator Anim;
     public Toilet Opponent;
-    public Toilet MainBody;
-    public Head MainHead;
-    public  float movespeed  = 0.25f; 
-    public HealthBar healthBar; 
+    public HealthBar healthBar;
+    public float moveSpeed = 50.25f;
+    private Rigidbody rb;
+
     void Start()
     {
-        CurrentHealth += MaxHealth;
+        CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    void FixedUpdate()
+    {
+        HandleMovement();
+    }
+
     void Update()
     {
+        HandleRotation();
+        HandleActions();
+    }
 
+    private void HandleMovement()
+    {
+        float moveHorizontal = IsPlayerOne ? Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal2");
+
+        // Create movement vector for left/right movement by modifying the z-axis instead of the x-axis
+        Vector3 movement = new Vector3(0.0f, 0.0f, moveHorizontal);
+
+        // Apply the movement to the Rigidbody
+        rb.MovePosition(rb.position + movement * moveSpeed);
+    }
+
+    private void HandleRotation()
+    {
+
+    }
+
+    private void HandleActions()
+    {
         if (IsPlayerOne)
         {
-            if (Opponent != null && MainBody != null)
-            {
-                MainBody.transform.LookAt(Opponent.MainBody.transform);
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                PunchAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                KickAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                KissAnimation();
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                MoveTowards();
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                MoveAwayFrom();
-            }
-            if (Input.GetKey(KeyCode.T))
-            {
-                HeadButtAnimation();
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                MoveToLeft();
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                MoveToRight();
-            }
+            if (Input.GetKeyDown(KeyCode.E)) PunchAnimation();
+            // ... andre aktioner for Player One
         }
-        else if (IsPlayerOne == false)
+        else
         {
-            if (Opponent != null && MainBody != null)
-            {
-                MainBody.transform.LookAt(Opponent.MainBody.transform);
-            }
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                PunchAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                KickAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                KissAnimation();
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                MoveTowards();
-            }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                MoveAwayFrom();
-            }
-            if (Input.GetKey(KeyCode.V))
-            {
-                HeadButtAnimation();
-            }
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                MoveToLeft();
-            }
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                MoveToRight();
-            }
+            if (Input.GetKeyDown(KeyCode.M)) PunchAnimation();
+            // ... andre aktioner for Player Two
         }
-
     }
 
-    private void MoveTowards()
-    {
-        // Define a forward direction vector (in Unity, forward is usually Vector3.forward).
-        Vector3 forwardDirection = Vector3.forward;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = forwardDirection * speed;
-
-        // Update the position to move the object forward.
-        transform.position += movement;
-    }
-    private void MoveAwayFrom()
-    {
-        // Define a backward direction vector (in Unity, backward is usually -Vector3.forward).
-        Vector3 backwardDirection = -Vector3.forward;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = backwardDirection * speed;
-
-        // Update the position to move the object backward.
-        transform.position += movement;
-    }
-    private void MoveToLeft()
-    {
-        // Define a left direction vector (in Unity, left is usually -Vector3.right).
-        Vector3 leftDirection = -Vector3.right;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = leftDirection * speed;
-
-        // Update the position to move the object to the left.
-        transform.position += movement;
-    }
-    private void MoveToRight()
-    {
-        // Define a right direction vector (in Unity, right is usually Vector3.right).
-        Vector3 rightDirection = Vector3.right;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = rightDirection * speed;
-
-        // Update the position to move the object to the right.
-        transform.position += movement;
-    }
     private void PunchAnimation()
     {
         Anim.SetTrigger("Punch");
-
     }
+
     private void HeadButtAnimation()
     {
         Anim.SetTrigger("Headbutt");
     }
+
     private void KickAnimation()
     {
         Anim.SetTrigger("Kick");
     }
+
     private void KissAnimation()
     {
         Anim.SetTrigger("Kiss");
     }
+
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
-            healthBar.SetHealth(CurrentHealth);
+        healthBar.SetHealth(CurrentHealth);
     }
-
 }

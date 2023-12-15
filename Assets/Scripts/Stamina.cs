@@ -7,10 +7,8 @@ public class Stamina : Attacks
     // The time it takes for the object to disappear.
     private float LifeTime = 3.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, LifeTime); // Destroy the GameObject after a certain lifetime.
     }
 
     // Handle collisions with other objects.

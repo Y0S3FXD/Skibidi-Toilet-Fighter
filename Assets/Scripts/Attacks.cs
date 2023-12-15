@@ -10,6 +10,8 @@ public class Attacks : MonoBehaviour
     public void TakeDamage(float randomDamage)
     {
         
-        BelongsTo.healthBar.SetHealth(randomDamage)
+        BelongsTo.CurrentHealth -= randomDamage;
+        BelongsTo.healthBar.SetHealth(BelongsTo.CurrentHealth);
+
     }
 }
