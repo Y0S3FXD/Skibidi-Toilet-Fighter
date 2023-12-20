@@ -1,52 +1,33 @@
-using System.Runtime.InteropServices;
-using System.ComponentModel;
-using UnityEngine.Events;
 using UnityEngine;
 
 public class Piss : Stamina
 {
-    public float PissCooldown;
-    private float CurrentCooldown;
-    public bool automatic;
-    public Transform PissSpawnPoint;
-    public GameObject PissPreFap;
-    public float PissSpeed = 0.5f;
-    public UnityEvent onshoot;
+    public ParticleSystem waterStream;
+    public Transform target; // Assign this in the Inspector
 
-    private void Start()
+    void Start()
     {
-        CurrentCooldown = PissCooldown;
+        waterStream = GetComponent<ParticleSystem>();
     }
-    private void Update()
+
+    void Update()
     {
-        if (automatic)
+        if (target != null)
         {
-            if (Input.GetMouseButton(0))
-            {
-                if (CurrentCooldown <= 0)
-                {
-                    CurrentCooldown = PissCooldown;
-                    onshoot?.Invoke();
-                }
-                else
-                {
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        if (CurrentCooldown <= 0)
-                        {
-                            CurrentCooldown = PissCooldown;
-                            onshoot?.Invoke();
-                        }
-                    }
-                }
-            }
-            /*for (int i = 0; i < 10; i++)
-            {
-                var pisso = Instantiate(PissPreFap, PissSpawnPoint.position, PissSpawnPoint.rotation);
-                Rigidbody pissRigidbody = pisso.GetComponent<Rigidbody>();
-                pissRigidbody.velocity = PissSpawnPoint.forward * PissSpeed;
-            }*/
-            CurrentCooldown -= Time.deltaTime;
+            // Rotate the Particle System to face the target
+            Vector3 directionToTarget = target.position - transform.position;
+            Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotationToTarget, Time.deltaTime * 10f); // Adjust the rotation speed as needed
+        }
+
+        if (Input.GetButtonDown("Fire1")) // Start emitting when the fire button is pressed
+        {
+            waterStream.Play();
+        }
+
+        if (Input.GetButtonUp("Fire1")) // Stop emitting when the fire button is released
+        {
+            waterStream.Stop();
         }
     }
 }

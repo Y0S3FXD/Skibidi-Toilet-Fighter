@@ -9,7 +9,27 @@ public class Attacks : MonoBehaviour
 
     public void GiveDamage(Toilet opponent)
     {
-        float randomDamage = UnityEngine.Random.Range(criticalDamage * 0.66f, criticalDamage);
-        opponent.Health -= randomDamage;
+        if (opponent.gameObject.CompareTag("Enemy1"))
+        {
+            Debug.Log("Stamina hit an enemy: " + BelongsTo.gameObject.name);
+            // Add your code to handle the collision with an enemy here.
+        }
+        else
+        {
+            Debug.Log("Stamina hit something else: ");
+        }
     }
-}
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy1"))
+        {
+            Debug.Log("1Stamina hit an enemy: " + collision.gameObject.name);
+            // Add your code to handle the collision with an enemy here.
+        }
+        else
+        {
+            Debug.Log("1Stamina hit something else: ");
+        }
+    }
+    
+    }
