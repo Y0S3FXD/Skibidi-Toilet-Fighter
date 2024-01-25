@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: Opponent
       value: 
       objectReference: {fileID: 1221595018}
+    - target: {fileID: 6514689691281655859, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1004110659}
     - target: {fileID: 6514689691742604703, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -872,7 +876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000064373, y: -0.000045717}
+  m_AnchoredPosition: {x: -0, y: -0.000045717}
   m_SizeDelta: {x: 72.4684, y: 12.4533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004110659
@@ -1117,6 +1121,7 @@ MonoBehaviour:
   MainBody: {fileID: 1221595018}
   MainHead: {fileID: 2111453217}
   movespeed: 0.25
+  healthbar: {fileID: 1442083550}
 --- !u!4 &1221595019
 Transform:
   m_ObjectHideFlags: 0

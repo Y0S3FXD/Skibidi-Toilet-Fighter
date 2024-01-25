@@ -14,6 +14,8 @@ public class Toilet : GameController
     public Toilet MainBody;
     public Head MainHead;
     public  float movespeed  = 0.25f; 
+    public HealthBar healthbar;
+
     // Start is called before the first frame update
     void Start()
     {
