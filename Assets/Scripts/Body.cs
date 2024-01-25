@@ -21,6 +21,7 @@ public class Body : MonoBehaviour
 
             while (i < numCollisionEvents)
             {
+                Debug.Log("Stamina hit an : " + BelongsTo.gameObject.name);
                 // Here you can handle the collision event, e.g., apply damage
                 BelongsTo.TakeDamage(1f); // Apply 10 damage to the character
                 i++;

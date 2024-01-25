@@ -18,6 +18,8 @@ public class Toilet : GameController
     public float CurrentHealth;
     public float MaxHealth = 100f;
     private Rigidbody rb;
+    private Vector3 arenaBounds = new Vector3(5f, 0f, 5f); // Bounds of the arena
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,59 +116,31 @@ public class Toilet : GameController
 
     private void MoveTowards()
     {
-        // Define a forward direction vector (in Unity, forward is usually Vector3.forward).
-        Vector3 forwardDirection = Vector3.forward;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = forwardDirection * speed;
-
-        // Update the position to move the object forward.
-        transform.position += movement;
+        Vector3 newPosition = transform.position + Vector3.forward * movespeed;
+        // Clamp the new position to the arena bounds
+        newPosition.z = Mathf.Clamp(newPosition.z, -arenaBounds.z, arenaBounds.z);
+        transform.position = newPosition;
     }
+
     private void MoveAwayFrom()
     {
-        // Define a backward direction vector (in Unity, backward is usually -Vector3.forward).
-        Vector3 backwardDirection = -Vector3.forward;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = backwardDirection * speed;
-
-        // Update the position to move the object backward.
-        transform.position += movement;
+        Vector3 newPosition = transform.position - Vector3.forward * movespeed;
+        newPosition.z = Mathf.Clamp(newPosition.z, -arenaBounds.z, arenaBounds.z);
+        transform.position = newPosition;
     }
+
     private void MoveToLeft()
     {
-        // Define a left direction vector (in Unity, left is usually -Vector3.right).
-        Vector3 leftDirection = -Vector3.right;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = leftDirection * speed;
-
-        // Update the position to move the object to the left.
-        transform.position += movement;
+        Vector3 newPosition = transform.position - Vector3.right * movespeed;
+        newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
+        transform.position = newPosition;
     }
+
     private void MoveToRight()
     {
-        // Define a right direction vector (in Unity, right is usually Vector3.right).
-        Vector3 rightDirection = Vector3.right;
-
-        // You can adjust the speed by changing the multiplier.
-        float speed = movespeed;
-
-        // Calculate the movement vector.
-        Vector3 movement = rightDirection * speed;
-
-        // Update the position to move the object to the right.
-        transform.position += movement;
+        Vector3 newPosition = transform.position + Vector3.right * movespeed;
+        newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
+        transform.position = newPosition;
     }
     private void PunchAnimation()
     {
