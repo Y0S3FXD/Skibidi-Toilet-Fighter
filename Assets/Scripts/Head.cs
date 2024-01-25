@@ -16,6 +16,7 @@ public class Head : MonoBehaviour
         {
             print(BelongsTo.name + " was hit by head  from " + head.BelongsTo.name);
             // Handle collision with Head component
+            BelongsTo.TakeDamage(25f); // Apply 10 damage to the character
         }
         else if (body != null)
         {

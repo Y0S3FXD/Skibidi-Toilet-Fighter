@@ -283,6 +283,14 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1004110659}
+    - target: {fileID: 6514689691281655859, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: movespeed
+      value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514689691281655859, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
+      propertyPath: CurrentHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6514689691742604703, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -396,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.058823533, b: 0.11764707, a: 1}
+  m_Color: {r: 0.05882351, g: 0.9372549, b: 0.12041481, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1120,8 +1128,10 @@ MonoBehaviour:
   Opponent: {fileID: 1223032902}
   MainBody: {fileID: 1221595018}
   MainHead: {fileID: 2111453217}
-  movespeed: 0.25
+  movespeed: 0.025
   healthbar: {fileID: 1442083550}
+  CurrentHealth: 0
+  MaxHealth: 100
 --- !u!4 &1221595019
 Transform:
   m_ObjectHideFlags: 0
@@ -4717,13 +4727,13 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
-    multiplyColliderForceByParticleSpeed: 0
+    multiplyColliderForceByParticleSpeed: 1
     multiplyColliderForceByCollisionAngle: 1
     m_Planes: []
     m_Dampen:
@@ -4890,11 +4900,11 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 2147483647
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -6042,7 +6052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000064373, y: -0.000045717}
+  m_AnchoredPosition: {x: -203, y: -5}
   m_SizeDelta: {x: 72.4684, y: 12.4533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442083550
@@ -10194,7 +10204,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:

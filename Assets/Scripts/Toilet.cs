@@ -13,12 +13,18 @@ public class Toilet : GameController
     public Toilet Opponent;
     public Toilet MainBody;
     public Head MainHead;
-    public  float movespeed  = 0.25f; 
+    public float movespeed = 0.25f;
     public HealthBar healthbar;
-
+    public float CurrentHealth;
+    public float MaxHealth = 100f;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        CurrentHealth = MaxHealth;
+        healthbar.SetMaxHealth(MaxHealth);
+        rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -181,11 +187,8 @@ public class Toilet : GameController
     }
     public void TakeDamage(float damage)
     {
-        Health -= damage;
-        if (Health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        CurrentHealth -= damage;
+        healthbar.SetHealth(CurrentHealth);
     }
 
 }
