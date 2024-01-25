@@ -1,29 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Piss : Attacks
+public class Piss : Stamina
 {
-    public Transform PissSpawnPoint;
-    public GameObject PissPreFap;
-    public float PissSpeed = 0.5f;
+    public ParticleSystem waterStream;
+    public Transform target; // Assign this in the Inspector
 
-    private void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                var pisso = Instantiate(PissPreFap, PissSpawnPoint.position, PissSpawnPoint.rotation);
-                Rigidbody pissRigidbody = pisso.GetComponent<Rigidbody>();
-                pissRigidbody.velocity = PissSpawnPoint.forward * PissSpeed;
-            }
-        }
+        waterStream = GetComponent<ParticleSystem>();
     }
 
-    // Handle collisions with any object and destroy the "piss" object.
-    private void OnCollisionEnter(Collision collision)
+    void Update()
     {
-        Debug.Log("im gonna remove you next time");
+        if (target != null)
+        {
+            // Rotate the Particle System to face the target
+            Vector3 directionToTarget = target.position - transform.position;
+            Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotationToTarget, Time.deltaTime * 10f); // Adjust the rotation speed as needed
+        }
+
+        if (Input.GetButtonDown("Fire1")) // Start emitting when the fire button is pressed
+        {
+            waterStream.Play();
+        }
+
+        if (Input.GetButtonUp("Fire1")) // Stop emitting when the fire button is released
+        {
+            waterStream.Stop();
+        }
     }
 }
