@@ -1178,7 +1178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterStream: {fileID: 1221595023}
-  target: {fileID: 2048276220}
   isEnemy: 0
 --- !u!198 &1221595023
 ParticleSystem:
@@ -1253,7 +1252,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -6470,7 +6469,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterStream: {fileID: 2048276218}
-  target: {fileID: 1221595019}
   isEnemy: 1
 --- !u!198 &2048276218
 ParticleSystem:
@@ -6545,7 +6543,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -8791,7 +8789,7 @@ ParticleSystem:
     multiplierCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 10.11
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -11251,11 +11249,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!4 &2048276220 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6514689691281655858, guid: 144c31622b4e1d64d98db2edaef20120, type: 3}
-  m_PrefabInstance: {fileID: 40308554}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2058262705
 GameObject:
   m_ObjectHideFlags: 0
