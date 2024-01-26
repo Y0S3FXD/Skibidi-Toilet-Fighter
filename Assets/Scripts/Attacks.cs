@@ -13,6 +13,7 @@ public class Attacks : MonoBehaviour
         {
             Debug.Log("Stamina hit an enemy: " + BelongsTo.gameObject.name);
             // Add your code to handle the collision with an enemy here.
+            BelongsTo.TakeDamage(1f); // Apply 10 damage to the character
         }
         else
         {

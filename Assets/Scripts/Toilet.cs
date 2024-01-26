@@ -13,14 +13,29 @@ public class Toilet : GameController
     public Toilet Opponent;
     public Toilet MainBody;
     public Head MainHead;
+    public float movespeed = 0.25f;
+    public HealthBar healthbar;
+    public float CurrentHealth;
+    public float MaxHealth = 100f;
+    private Rigidbody rb;
+    private Vector3 arenaBounds = new Vector3(5f, 0f, 5f); // Bounds of the arena
+
     // Start is called before the first frame update
     void Start()
     {
+        CurrentHealth = MaxHealth;
+        healthbar.SetMaxHealth(MaxHealth);
+        rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (CurrentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
 
         if (IsPlayerOne)
         {
@@ -51,6 +66,14 @@ public class Toilet : GameController
             if (Input.GetKey(KeyCode.T))
             {
                 HeadButtAnimation();
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                MoveToLeft();
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                MoveToRight();
             }
         }
         else if (IsPlayerOne == false)
@@ -83,23 +106,45 @@ public class Toilet : GameController
             {
                 HeadButtAnimation();
             }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                MoveToLeft();
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                MoveToRight();
+            }
         }
 
     }
 
     private void MoveTowards()
     {
-        Vector3 direction = Opponent.MainBody.transform.position - MainBody.transform.position;
-        Vector3 normalizedDirection = direction.normalized;
-        Vector3 movement = normalizedDirection * 0.01f;
-        transform.position += movement;
+        Vector3 newPosition = transform.position + Vector3.forward * movespeed;
+        // Clamp the new position to the arena bounds
+        newPosition.z = Mathf.Clamp(newPosition.z, -arenaBounds.z, arenaBounds.z);
+        transform.position = newPosition;
     }
+
     private void MoveAwayFrom()
     {
-        Vector3 direction = Opponent.MainBody.transform.position - MainBody.transform.position;
-        Vector3 normalizedDirection = direction.normalized;
-        Vector3 movement = normalizedDirection * 0.01f;
-        transform.position -= movement;
+        Vector3 newPosition = transform.position - Vector3.forward * movespeed;
+        newPosition.z = Mathf.Clamp(newPosition.z, -arenaBounds.z, arenaBounds.z);
+        transform.position = newPosition;
+    }
+
+    private void MoveToLeft()
+    {
+        Vector3 newPosition = transform.position - Vector3.right * movespeed;
+        newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
+        transform.position = newPosition;
+    }
+
+    private void MoveToRight()
+    {
+        Vector3 newPosition = transform.position + Vector3.right * movespeed;
+        newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
+        transform.position = newPosition;
     }
     private void PunchAnimation()
     {
@@ -120,11 +165,8 @@ public class Toilet : GameController
     }
     public void TakeDamage(float damage)
     {
-        Health -= damage;
-        if (Health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        CurrentHealth -= damage;
+        healthbar.SetHealth(CurrentHealth);
     }
 
 }
