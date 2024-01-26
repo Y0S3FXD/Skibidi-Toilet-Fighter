@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: uLiquid - Water - Steam MAT
+  m_Name: Enemy
   m_Shader: {fileID: 4800000, guid: e1d08846cb72eeb419914427f2b21345, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -29,5 +29,5 @@ Material:
     - _Shininess: 0.487
     - _WaveStrength: -4.4
     m_Colors:
-    - _Color: {r: 1, g: 0.9747956, b: 0, a: 1}
+    - _Color: {r: 0.3523051, g: 0.8584906, b: 0.4003346, a: 1}
   m_BuildTextureStacks: []

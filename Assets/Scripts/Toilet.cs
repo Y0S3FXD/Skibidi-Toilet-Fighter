@@ -32,6 +32,10 @@ public class Toilet : GameController
     // Update is called once per frame
     void Update()
     {
+        if (CurrentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
 
         if (IsPlayerOne)
         {
