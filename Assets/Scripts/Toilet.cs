@@ -168,5 +168,11 @@ public class Toilet : GameController
         CurrentHealth -= damage;
         healthbar.SetHealth(CurrentHealth);
     }
-
+    public bool IsPerformingAttack()
+    {
+        return Anim.GetCurrentAnimatorStateInfo(0).IsName("Headbutt") ||
+               Anim.GetCurrentAnimatorStateInfo(0).IsName("Punch") ||
+               Anim.GetCurrentAnimatorStateInfo(0).IsName("Kick") ||
+               Anim.GetCurrentAnimatorStateInfo(0).IsName("Kiss"); // Add other attack animations as needed
+    }
 }
