@@ -35,6 +35,7 @@ public class Toilet : GameController
         if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
+            StartButton.EndGame();
         }
 
         if (IsPlayerOne)
