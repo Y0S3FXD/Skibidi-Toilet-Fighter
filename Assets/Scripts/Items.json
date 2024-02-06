@@ -1,0 +1,37 @@
+[
+    {
+        "health": 10,
+        "Type": "Stamina"
+    },
+    {
+        "health": 15,
+        "Type": "Stamina"
+    },
+    {
+        "health": 18,
+        "Type": "Stamina"
+    },    {
+        "health": 17,
+        "Type": "Stamina"
+    },
+    {
+        "health": 16,
+        "Type": "Health"
+    },
+    {
+        "health": 14,
+        "Type": "Stamina"
+    },
+    {
+        "health": 12,
+        "Type": "Health"
+    },
+    {
+        "health": 23,
+        "Type": "Health"
+    },
+    {
+        "health": 11,
+        "Type": "Stamina"
+    }
+]
