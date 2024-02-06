@@ -5,11 +5,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Toilet : GameController
+public class Toilet : MonoBehaviour
 {
     public float Health = 100f;
     public bool IsPlayerOne = false;
-    public Animator Anim;
     public Toilet Opponent;
     public Toilet MainBody;
     public Head MainHead;
@@ -18,9 +17,7 @@ public class Toilet : GameController
     public float CurrentHealth;
     public float MaxHealth = 100f;
     private Rigidbody rb;
-    private Vector3 arenaBounds = new Vector3(5f, 0f, 5f); // Bounds of the arena
-
-    // Start is called before the first frame update
+    private Vector3 arenaBounds = new Vector3(5f, 0f, 5f); 
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -43,18 +40,6 @@ public class Toilet : GameController
             {
                 MainBody.transform.LookAt(Opponent.MainBody.transform);
             }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                PunchAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                KickAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                KissAnimation();
-            }
             if (Input.GetKey(KeyCode.W))
             {
                 MoveTowards();
@@ -63,10 +48,7 @@ public class Toilet : GameController
             {
                 MoveAwayFrom();
             }
-            if (Input.GetKey(KeyCode.T))
-            {
-                HeadButtAnimation();
-            }
+           
             if (Input.GetKey(KeyCode.A))
             {
                 MoveToLeft();
@@ -82,18 +64,7 @@ public class Toilet : GameController
             {
                 MainBody.transform.LookAt(Opponent.MainBody.transform);
             }
-            if (Input.GetKeyDown(KeyCode.M))
-            {
-                PunchAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.N))
-            {
-                KickAnimation();
-            }
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                KissAnimation();
-            }
+           
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 MoveTowards();
@@ -102,10 +73,7 @@ public class Toilet : GameController
             {
                 MoveAwayFrom();
             }
-            if (Input.GetKey(KeyCode.V))
-            {
-                HeadButtAnimation();
-            }
+        
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 MoveToLeft();
@@ -135,6 +103,7 @@ public class Toilet : GameController
 
     private void MoveToLeft()
     {
+        //rotate to left
         Vector3 newPosition = transform.position - Vector3.right * movespeed;
         newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
         transform.position = newPosition;
@@ -146,6 +115,7 @@ public class Toilet : GameController
         newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
         transform.position = newPosition;
     }
+    /*
     private void PunchAnimation()
     {
         Anim.SetTrigger("Punch");
@@ -162,11 +132,11 @@ public class Toilet : GameController
     private void KissAnimation()
     {
         Anim.SetTrigger("Kiss");
-    }
+    }*/
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
         healthbar.SetHealth(CurrentHealth);
-    }
+    } 
 
 }

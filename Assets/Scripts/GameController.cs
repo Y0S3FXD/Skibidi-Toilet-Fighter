@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject arenaPrefab; // Reference to the arena prefab
-    
-    private Arena arenaInstance; // Reference to the instantiated arena
+    public GameObject arenaPrefab; // Arena prefab
+    public GameObject playerOnePrefab; // Player one prefab
+    public GameObject playerTwoPrefab; // Player two prefab
+
+    private Arena arenaInstance; // Instantiated arena
 
     void Start()
     {
-        // Spawn the arena
+        // Instantiate the arena
         GameObject arenaGO = Instantiate(arenaPrefab, Vector3.zero, Quaternion.identity);
         arenaInstance = arenaGO.GetComponent<Arena>();
-
-        // Create the arena components
         arenaInstance.CreateFloor(Vector3.zero);
         arenaInstance.CreateWalls();
         arenaInstance.CreateLight(new Vector3(0f, 10f, 0f));
 
-        // Other initialization code...
+        // Instantiate players
+        Instantiate(playerOnePrefab, new Vector3(-2, 0, 0), Quaternion.identity); // Position for player one
+        Instantiate(playerTwoPrefab, new Vector3(2, 0, 0), Quaternion.identity); // Position for player two
     }
 
     // Other GameController methods...
