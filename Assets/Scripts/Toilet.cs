@@ -12,12 +12,16 @@ public class Toilet : MonoBehaviour
     public Toilet Opponent;
     public Toilet MainBody;
     public Head MainHead;
-    public float movespeed = 0.25f;
+    public float movespeed = 5.25f;
     public HealthBar healthbar;
     public float CurrentHealth;
     public float MaxHealth = 100f;
     private Rigidbody rb;
-    private Vector3 arenaBounds = new Vector3(5f, 0f, 5f); 
+    private Vector3 arenaBounds = new Vector3(5f, 0f, 5f);
+
+    public float rotationSpeed = 100.0f;
+    private float rotation;
+
     void Start()
     {
         CurrentHealth = MaxHealth;
@@ -29,6 +33,7 @@ public class Toilet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
         if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
@@ -36,10 +41,7 @@ public class Toilet : MonoBehaviour
 
         if (IsPlayerOne)
         {
-            if (Opponent != null && MainBody != null)
-            {
-                MainBody.transform.LookAt(Opponent.MainBody.transform);
-            }
+
             if (Input.GetKey(KeyCode.W))
             {
                 MoveTowards();
@@ -48,7 +50,7 @@ public class Toilet : MonoBehaviour
             {
                 MoveAwayFrom();
             }
-           
+
             if (Input.GetKey(KeyCode.A))
             {
                 MoveToLeft();
@@ -60,11 +62,8 @@ public class Toilet : MonoBehaviour
         }
         else if (IsPlayerOne == false)
         {
-            if (Opponent != null && MainBody != null)
-            {
-                MainBody.transform.LookAt(Opponent.MainBody.transform);
-            }
-           
+
+
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 MoveTowards();
@@ -73,7 +72,7 @@ public class Toilet : MonoBehaviour
             {
                 MoveAwayFrom();
             }
-        
+
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 MoveToLeft();
@@ -88,32 +87,23 @@ public class Toilet : MonoBehaviour
 
     private void MoveTowards()
     {
-        Vector3 newPosition = transform.position + Vector3.forward * movespeed;
-        // Clamp the new position to the arena bounds
-        newPosition.z = Mathf.Clamp(newPosition.z, -arenaBounds.z, arenaBounds.z);
-        transform.position = newPosition;
+        transform.Translate(0, 0, movespeed * Time.deltaTime);
     }
 
     private void MoveAwayFrom()
     {
-        Vector3 newPosition = transform.position - Vector3.forward * movespeed;
-        newPosition.z = Mathf.Clamp(newPosition.z, -arenaBounds.z, arenaBounds.z);
-        transform.position = newPosition;
-    }
+        transform.Translate(0, 0, movespeed * -Time.deltaTime);
 
+    }
     private void MoveToLeft()
     {
-        //rotate to left
-        Vector3 newPosition = transform.position - Vector3.right * movespeed;
-        newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
-        transform.position = newPosition;
+        transform.Rotate(0, 90 * -Time.deltaTime, 0); // Adjust the rotation speed as needed
     }
 
     private void MoveToRight()
     {
-        Vector3 newPosition = transform.position + Vector3.right * movespeed;
-        newPosition.x = Mathf.Clamp(newPosition.x, -arenaBounds.x, arenaBounds.x);
-        transform.position = newPosition;
+        transform.Rotate(0, 90 * Time.deltaTime, 0); // Adjust the rotation speed as needed
+
     }
     /*
     private void PunchAnimation()
@@ -137,6 +127,6 @@ public class Toilet : MonoBehaviour
     {
         CurrentHealth -= damage;
         healthbar.SetHealth(CurrentHealth);
-    } 
+    }
 
 }
