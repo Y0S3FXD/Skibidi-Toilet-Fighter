@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 105618957795830121}
   - component: {fileID: 105618957795830122}
   - component: {fileID: 105618957795830166}
-  - component: {fileID: 2179105125583858016}
+  - component: {fileID: -4210864389235837353}
   m_Layer: 0
   m_Name: Toilet
   m_TagString: Untagged
@@ -4833,7 +4833,6 @@ MonoBehaviour:
   IsPlayerOne: 1
   Opponent: {fileID: 6109153378770060932, guid: 707a3466a133e5f47be09f493b5dc82a, type: 3}
   MainBody: {fileID: 105618957795830122}
-  MainHead: {fileID: 0}
   movespeed: 3
   healthbar: {fileID: 4739516408579084760}
   CurrentHealth: 0
@@ -4851,9 +4850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cfa0ae1c116a340a372c97b42bca9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PissParticle: {fileID: 0}
+  PissParticle: {fileID: 105618957795830120}
   isEnemy: 0
---- !u!54 &2179105125583858016
+--- !u!54 &-4210864389235837353
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4865,9 +4864,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!1 &6940770651096436452
 GameObject:

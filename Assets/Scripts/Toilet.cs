@@ -11,7 +11,6 @@ public class Toilet : MonoBehaviour
     public bool IsPlayerOne = false;
     public Toilet Opponent;
     public Toilet MainBody;
-    public Head MainHead;
     public float movespeed = 5.25f;
     public HealthBar healthbar;
     public float CurrentHealth;
