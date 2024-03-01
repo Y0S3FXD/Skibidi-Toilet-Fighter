@@ -1,26 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Body : MonoBehaviour
 {
-    public Mutant BelongsTo;
-    void OnTriggerEnter(Collider other)
+    public Toilet BelongsTo;
+    private List<ParticleCollisionEvent> collisionEvents;
+
+    void Start()
     {
-        if (other.gameObject.GetComponent<Hand>() != null)
-        {
-            Hand hand = other.gameObject.GetComponent<Hand>();
-            if (hand.BelongsTo != BelongsTo)
-            {
-                print(BelongsTo.name + "was hit by" + hand.BelongsTo.name);
-            }
-        }
+        collisionEvents = new List<ParticleCollisionEvent>();
     }
-    void OnCollisionEnter(Collision collision)
+
+    void OnParticleCollision(GameObject other)
     {
-        if (collision.gameObject.tag == "Mainbody")
+        ParticleSystem particleSystem = other.GetComponent<ParticleSystem>();
+        if (particleSystem)
         {
-            Debug.Log("The player has collided!");
+            int numCollisionEvents = particleSystem.GetCollisionEvents(gameObject, collisionEvents);
+            int i = 0;
+
+            while (i < numCollisionEvents)
+            {
+                Debug.Log("Stamina hit an : " + BelongsTo.gameObject.name);
+                // Here you can handle the collision event, e.g., apply damage
+                BelongsTo.TakeDamage(1f); // Apply 10 damage to the character
+                i++;
+            }
         }
     }
 }
