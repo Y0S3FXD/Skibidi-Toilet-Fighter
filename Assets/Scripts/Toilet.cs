@@ -37,6 +37,7 @@ public class Toilet : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
+            StartButton.EndGame();
         }
 
         if (IsPlayerOne)

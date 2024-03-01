@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//In a later rendition it might make sense to make the class arena intoa singletonm however as it stands it is not necessary
 public class Arena : MonoBehaviour
 {
     public GameObject floorPrefab;
