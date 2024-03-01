@@ -11,9 +11,25 @@ public enum WallState
     right = 2, //0010
     up = 4, //0100
     down = 8, //1000
+
+    visited = 128, //1000 0000
+}
+
+public struct Position
+{
+    public int X;
+    public int Y;
+}
+public struct Neighbour
+{
+    public Position Position;
+    public WallState SharedWall;
+
 }
 public static class Mazegenerator
 {
+
+     
     // Start is called before the first frame update
     public static WallState[,] Generate(int width, int height)
     {
