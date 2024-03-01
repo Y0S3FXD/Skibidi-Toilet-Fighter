@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour
         GameObject arenaGO = Instantiate(arenaPrefab, Vector3.zero, Quaternion.identity);
         arenaInstance = arenaGO.GetComponent<Arena>();
         arenaInstance.CreateFloor(Vector3.zero);
-        arenaInstance.CreateWalls();
         arenaInstance.CreateLight(new Vector3(0f, 10f, 0f));
 
         // Instantiate players
