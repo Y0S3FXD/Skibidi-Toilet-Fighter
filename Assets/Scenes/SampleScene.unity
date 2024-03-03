@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6570439831618502011, guid: ea4eeec564c0479428c2fcb70c93b669, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.3
+      value: -0.72
       objectReference: {fileID: 0}
     - target: {fileID: 6570439831618502011, guid: ea4eeec564c0479428c2fcb70c93b669, type: 3}
       propertyPath: m_LocalRotation.w
@@ -273,7 +273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottlePrefab: {fileID: 625910839}
-  BelongsTo: {fileID: 0}
 --- !u!108 &625910842
 Light:
   m_ObjectHideFlags: 0
@@ -286,7 +285,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.7274825, b: 0, a: 1}
-  m_Intensity: 1
+  m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -325,7 +324,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

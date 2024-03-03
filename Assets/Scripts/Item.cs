@@ -3,7 +3,6 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public GameObject bottlePrefab;
-    public Toilet BelongsTo;
     //Takes in toilet and call it functiuon for health
     public async void GiveHealth(Toilet ToiletToHeal)
     {
@@ -33,10 +32,22 @@ public class Item : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        GameObject collidedObject = collision.gameObject;
+
         //when something collides with the boittle it suicides and creates a new one
         Destroy(gameObject);
         CreateItem(GenerateRandomVector());
         Debug.Log("Item destroyed");
-        GiveHealth(BelongsTo);
+        if (collidedObject.CompareTag("Toilet"))
+        {
+            // Get the Toilet component from the collided GameObject
+            Toilet toilet = collidedObject.GetComponent<Toilet>();
+
+            // If Toilet component is found, give health
+            if (toilet != null)
+            {
+                GiveHealth(toilet);
+            }
+        }
     }
 }
