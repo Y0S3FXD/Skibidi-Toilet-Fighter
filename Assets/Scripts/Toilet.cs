@@ -35,7 +35,7 @@ public class Toilet : MonoBehaviour
         rotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
         if (CurrentHealth <= 0)
         {
-            //If healt goes below zero the toilet dies and the games goes back to the start
+            //If health goes below zero the toilet dies and the games goes back to the start
             Destroy(gameObject);
             StartButton.EndGame();
         }
@@ -127,6 +127,11 @@ public class Toilet : MonoBehaviour
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
+        healthbar.SetHealth(CurrentHealth);
+    }
+    public void GiveHealth(float health)
+    {
+        CurrentHealth += health;
         healthbar.SetHealth(CurrentHealth);
     }
 

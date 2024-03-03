@@ -1,38 +1,29 @@
 [
     //In the following there is a value for regeneration and regen amount
     {
-        "health": 10,
-        "type": "Stamina"
+        "health": 10
     },
     {
-        "health": 15,
-        "type": "Stamina"
+        "health": 15
     },
     {
-        "health": 18,
-        "type": "Stamina"
+        "health": 18
     },    {
-        "health": 17,
-        "type": "Stamina"
+        "health": 17
     },
     {
-        "health": 16,
-        "type": "Health"
+        "health": 16
     },
     {
-        "health": 14,
-        "type": "Stamina"
+        "health": 14
     },
     {
-        "health": 12,
-        "type": "Health"
+        "health": 12
     },
     {
-        "health": 23,
-        "type": "Health"
+        "health": 23
     },
     {
-        "health": 11,
-        "type": "Stamina"
+        "health": 11
     }
 ]
