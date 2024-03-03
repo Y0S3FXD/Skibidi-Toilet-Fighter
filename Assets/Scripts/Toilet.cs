@@ -26,7 +26,6 @@ public class Toilet : MonoBehaviour
         CurrentHealth = MaxHealth;
         healthbar.SetMaxHealth(MaxHealth);
         rb = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
@@ -129,9 +128,9 @@ public class Toilet : MonoBehaviour
         CurrentHealth -= damage;
         healthbar.SetHealth(CurrentHealth);
     }
-    public void GiveHealth(float health)
+    public void TakeHealth(float regenAmount)
     {
-        CurrentHealth += health;
+        CurrentHealth += regenAmount;
         healthbar.SetHealth(CurrentHealth);
     }
 
