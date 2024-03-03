@@ -32,22 +32,27 @@ public class Item : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        GameObject collidedObject = collision.gameObject;
 
         //when something collides with the boittle it suicides and creates a new one
         Destroy(gameObject);
         CreateItem(GenerateRandomVector());
         Debug.Log("Item destroyed");
+
+        // The object collided is called collidedObject
+        GameObject collidedObject = collision.gameObject;
+
+        // This check that the object is tagged Toilet, and it is therefore a toilet
         if (collidedObject.CompareTag("Toilet"))
         {
-            // Get the Toilet component from the collided GameObject
+            //The toilet is set to toilet
             Toilet toilet = collidedObject.GetComponent<Toilet>();
 
-            // If Toilet component is found, give health
+            // If it is a toilet the toilet is given health
             if (toilet != null)
             {
                 GiveHealth(toilet);
             }
         }
+
     }
 }

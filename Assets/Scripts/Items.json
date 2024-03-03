@@ -1,29 +1,30 @@
 [
     //In the following there is a value for regeneration and regen amount
     {
-        "health": 10
+        "health": 10.0
     },
     {
-        "health": 15
+        "health": 15.0
     },
     {
-        "health": 18
-    },    {
-        "health": 17
+        "health": 18.0
     },
     {
-        "health": 16
+        "health": 17.0
     },
     {
-        "health": 14
+        "health": 16.0
     },
     {
-        "health": 12
+        "health": 14.0
     },
     {
-        "health": 23
+        "health": 12.0
     },
     {
-        "health": 11
+        "health": 23.0
+    },
+    {
+        "health": 11.0
     }
 ]
