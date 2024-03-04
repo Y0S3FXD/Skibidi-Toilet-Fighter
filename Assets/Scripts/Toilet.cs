@@ -44,7 +44,13 @@ public class Toilet : MonoBehaviour
             CurrentHealth = MaxHealth;
             Debug.Log("Health reset to " + CurrentHealth);
         }
-        else { }
+
+        if (transform.position.y < -10f)
+        {
+            //If the y-poston of the toilet is under -10 the toilet dies as its health is reduced
+            CurrentHealth = -100f;
+            Debug.Log("Toilet died from falling");
+        }
 
         if (IsPlayerOne)
         {
