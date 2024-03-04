@@ -30,10 +30,10 @@ public class Item : MonoBehaviour
         return new Vector3(randomX, 2f, randomZ);
         Debug.Log("New position created");
     }
+    //when something collides with the boittle it suicides and creates a new one
+
     void OnCollisionEnter(Collision collision)
     {
-
-        //when something collides with the boittle it suicides and creates a new one
         Destroy(gameObject);
         CreateItem(GenerateRandomVector());
         Debug.Log("Item destroyed");

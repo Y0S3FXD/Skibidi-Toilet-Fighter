@@ -14,7 +14,7 @@ public class Toilet : MonoBehaviour
     public float movespeed = 5.25f;
     public HealthBar healthbar;
     public float CurrentHealth;
-    public float MaxHealth = 100f;
+    public float MaxHealth = 100;
     private Rigidbody rb;
     private Vector3 arenaBounds = new Vector3(5f, 0f, 5f);
 
@@ -34,10 +34,17 @@ public class Toilet : MonoBehaviour
         rotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
         if (CurrentHealth <= 0)
         {
-            //If health goes below zero the toilet dies and the games goes back to the start
+            //If health goes at or below zero the toilet dies and the games goes back to the start
             Destroy(gameObject);
             StartButton.EndGame();
         }
+        if (CurrentHealth > MaxHealth)
+        {
+            //If health goes above MacHealth it will be set to MacHealth, thus making sure that health can't go above 100
+            CurrentHealth = MaxHealth;
+            Debug.Log("Health reset to " + CurrentHealth);
+        }
+        else { }
 
         if (IsPlayerOne)
         {
