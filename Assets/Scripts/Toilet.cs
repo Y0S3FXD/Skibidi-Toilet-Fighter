@@ -40,11 +40,18 @@ public class Toilet : MonoBehaviour
         }
         if (CurrentHealth > MaxHealth)
         {
-            //If health goes above MacHealth it will be set to MacHealth, thus making sure that health can't go above 100
+            //If health goes above MacHealth it will be set to MaxHealth, thus making sure that health can't go above 100
             CurrentHealth = MaxHealth;
             Debug.Log("Health reset to " + CurrentHealth);
         }
         else { }
+
+        if (transform.position.y < -10f)
+        {
+            //If the y-poston of the toilet is under -10 the toilet dies as its health is reduced
+            CurrentHealth = -100f;
+            Debug.Log("Toilet died from falling");
+        }
 
         if (IsPlayerOne)
         {
