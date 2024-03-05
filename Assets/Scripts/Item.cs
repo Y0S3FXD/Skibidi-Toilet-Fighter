@@ -4,44 +4,37 @@ public class Item : MonoBehaviour
 {
     public GameObject bottlePrefab;
     //Takes in toilet and call it functiuon for health
-    public async void GiveHealth(Toilet ToiletToHeal)
+    public void GiveHealth(Toilet ToiletToHeal)
     {
         ToiletToHeal.TakeHealth(10.0f);
         Debug.Log("Health given");
     }
     //New bottle is created
-    async void CreateItem(Vector3 position)
+    void CreateItem(Vector3 position)
     {
         GameObject bottle = Instantiate(bottlePrefab, position, Quaternion.identity);
         bottle.transform.localScale = new Vector3(1f, 1f, 1f);
         Debug.Log("New item created");
     }
     //generate random vetor with a range for x and z, as it need to be
-    Vector3 GenerateRandomVector()
+    Vector3 VectorGenerator()
     {
-        float minX = -8;
-        float maxX = 1;
-        float minZ = -8f;
-        float maxZ = 8;
-
-        float randomX = Random.Range(minX, maxX);
-        float randomZ = Random.Range(minZ, maxZ);
-
+        float randomX = Random.Range(-8f, 8f);
+        float randomZ = Random.Range(-8f, 8f);
         return new Vector3(randomX, 2f, randomZ);
-        Debug.Log("New position created");
+        Debug.Log("New position generated");
     }
     //when something collides with the boittle it suicides and creates a new one
-
     void OnCollisionEnter(Collision collision)
     {
         Destroy(gameObject);
-        CreateItem(GenerateRandomVector());
+        CreateItem(VectorGenerator());
         Debug.Log("Item destroyed");
 
         // The object collided is called collidedObject
         GameObject collidedObject = collision.gameObject;
 
-        // This check that the object is tagged Toilet, and it is therefore a toilet
+        // This checks that the object is tagged Toilet, and it is therefore a toilet
         if (collidedObject.CompareTag("Toilet"))
         {
             //The toilet is set to toilet
