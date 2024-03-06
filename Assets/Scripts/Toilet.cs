@@ -44,8 +44,6 @@ public class Toilet : MonoBehaviour
             CurrentHealth = MaxHealth;
             Debug.Log("Health reset to " + CurrentHealth);
         }
-        else { }
-
         if (transform.position.y < -10f)
         {
             //If the y-poston of the toilet is under -10 the toilet dies as its health is reduced
@@ -98,7 +96,7 @@ public class Toilet : MonoBehaviour
         }
 
     }
-
+#region MoveMethods
     private void MoveTowards()
     {
         transform.Translate(0, 0, movespeed * Time.deltaTime);
@@ -119,24 +117,9 @@ public class Toilet : MonoBehaviour
         transform.Rotate(0, 90 * Time.deltaTime, 0); // Adjust the rotation speed as needed
 
     }
-    /*
-    private void PunchAnimation()
-    {
-        Anim.SetTrigger("Punch");
 
-    }
-    private void HeadButtAnimation()
-    {
-        Anim.SetTrigger("Headbutt");
-    }
-    private void KickAnimation()
-    {
-        Anim.SetTrigger("Kick");
-    }
-    private void KissAnimation()
-    {
-        Anim.SetTrigger("Kiss");
-    }*/
+    #endregion
+ 
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
