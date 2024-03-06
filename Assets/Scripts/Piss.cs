@@ -1,19 +1,19 @@
 using UnityEngine;
-
+using System.Threading.Tasks;
 public class Piss : Stamina
 {
     public ParticleSystem PissParticle;
-    public bool isEnemy; // Add a flag to distinguish between ally and enemy
+    public bool isEnemy; // Add a bool to distinguish between players
 
-    void Start()
+    async void Start()
     {
         PissParticle = GetComponent<ParticleSystem>();
+        await Task.Delay(1000); // Wait for 1 second
+
     }
 
     void Update()
     {
-    
-
         // Determine the correct input based on whether this is the enemy or ally
         if (isEnemy && Input.GetButtonDown("Fire1")) // Enemy fires with left mouse click
         {
@@ -24,7 +24,7 @@ public class Piss : Stamina
             PissParticle.Play();
         }
 
-        // Stop emitting if the input is released; this could also be separated for enemy and ally
+        // Stop emitting if the input is released; separated for enemy and ally
         if ((isEnemy && Input.GetButtonUp("Fire1")) || (!isEnemy && Input.GetKeyUp(KeyCode.Space)))
         {
             PissParticle.Stop();
