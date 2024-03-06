@@ -5,11 +5,9 @@ public class Piss : Stamina
     public ParticleSystem PissParticle;
     public bool isEnemy; // Add a bool to distinguish between players
 
-    async void Start()
+    void Start()
     {
         PissParticle = GetComponent<ParticleSystem>();
-        await Task.Delay(1000); // Wait for 1 second
-
     }
 
     void Update()

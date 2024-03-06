@@ -23,7 +23,6 @@ public class Item : MonoBehaviour
         float randomZ = Random.Range(-8f, 8f);
 
         return new Vector3(randomX, 2f, randomZ);
-        Debug.Log("New position created");
     }
     //when something collides with the boittle it suicides and creates a new one
 
