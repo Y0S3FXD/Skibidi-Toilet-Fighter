@@ -1,23 +1,18 @@
 using UnityEngine;
 //originally this code used both Start() and Update() however that was causing issues
-public class Item : MonoBehaviour
+abstract public class AItem : MonoBehaviour, IItem
 {
-    public GameObject bottlePrefab;
-    //Takes in toilet and call it functiuon for health
-    public async void GiveHealth(Toilet ToiletToHeal)
+    public virtual void GiveHealth(Toilet ToiletToHeal)
     {
         ToiletToHeal.TakeHealth(10.0f);
         Debug.Log("Health given");
     }
-    //New bottle is created
-    async void CreateItem(Vector3 position)
+    public virtual void CreateItem(Vector3 position)
     {
-        GameObject bottle = Instantiate(bottlePrefab, position, Quaternion.identity);
-        bottle.transform.localScale = new Vector3(1f, 1f, 1f);
         Debug.Log("New item created");
     }
-    //generate random vetor with a range for x and z, as it need to be
-    Vector3 VectorGenerator()
+    //generates random vetor with a range for x and z, as it need to be
+    public virtual Vector3 VectorGenerator()
     {
         float randomX = Random.Range(-8f, 8f);
         float randomZ = Random.Range(-8f, 8f);
