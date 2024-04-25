@@ -153,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2dc76431b113048a462f22a205ac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BottlePrefab: {fileID: 4077178618142262438}
+  BottlePrefab: {fileID: 0}

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 173587700734767709}
   - component: {fileID: -3812797577391670513}
   - component: {fileID: -2072484744886366105}
-  - component: {fileID: 2969797300008737110}
+  - component: {fileID: -5502196626828015319}
+  - component: {fileID: -7117027093958971840}
   m_Layer: 0
   m_Name: cigarPrefab
   m_TagString: Untagged
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3899366430556875729}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.017751679, y: 0.017142592, z: 0.017142594, w: 0.99954855}
   m_LocalPosition: {x: 0, y: 0, z: 4981}
   m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2, y: 2, z: 2}
 --- !u!33 &-3812797577391670513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -84,8 +85,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2969797300008737110
-MeshCollider:
+--- !u!114 &-5502196626828015319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3899366430556875729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d261190acacf5408985954e15d85d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CigarPrefab: {fileID: 3899366430556875729}
+--- !u!136 &-7117027093958971840
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +108,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4855694659092223611, guid: bde64c58e91855243bc268bb65870521, type: 3}
+  m_Radius: 1
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 1.8233795, y: 0.044144496, z: 2.066238}

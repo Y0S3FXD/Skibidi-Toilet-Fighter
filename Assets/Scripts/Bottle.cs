@@ -14,6 +14,5 @@ public class Bottle : AItem
         GameObject Bottle = Instantiate(BottlePrefab, position, Quaternion.identity);
         Bottle.transform.localScale = new Vector3(1f, 1f, 1f);
     }
-
 }
 

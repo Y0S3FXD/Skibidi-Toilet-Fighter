@@ -24,7 +24,7 @@ public class Piss : Attacks
 
         }
 
-        
+
         if ((isEnemy && Input.GetButtonUp("Fire1")) || (!isEnemy && Input.GetKeyUp(KeyCode.Space)))
         {
             PissParticle.Stop();
