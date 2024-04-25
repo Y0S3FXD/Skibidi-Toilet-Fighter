@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Threading.Tasks;
+using System;
+
 public class Piss : Attacks
 {
     public ParticleSystem PissParticle;
@@ -15,16 +17,19 @@ public class Piss : Attacks
         if (isEnemy && Input.GetButtonDown("Fire1")) // Fire1 er inbygget funktion i Unity, som er knyttet til venstre museklik
         {
             PissParticle.Play();
+            BelongsTo.UseStamina(1)
         }
         else if (!isEnemy && Input.GetKeyDown(KeyCode.Space)) // Anden spiller bruger space
         {
             PissParticle.Play();
+
         }
 
-        // stop partiklerne når venstre museklik eller spacebar bliver sluppet
+        
         if ((isEnemy && Input.GetButtonUp("Fire1")) || (!isEnemy && Input.GetKeyUp(KeyCode.Space)))
         {
             PissParticle.Stop();
+
         }
     }
 }

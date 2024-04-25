@@ -9,7 +9,7 @@ class Toilet{
     + List<items> items
     + public bool IsPlayerOne = false
     --
-    + Toilet(string name, int health)
+    + Toilet(string name, int health, int stamina)
     --
     + void Start()
 }
