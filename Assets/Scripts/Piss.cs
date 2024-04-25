@@ -17,7 +17,6 @@ public class Piss : Attacks
         if (isEnemy && Input.GetButtonDown("Fire1")) // Fire1 er inbygget funktion i Unity, som er knyttet til venstre museklik
         {
             PissParticle.Play();
-            BelongsTo.UseStamina(1)
         }
         else if (!isEnemy && Input.GetKeyDown(KeyCode.Space)) // Anden spiller bruger space
         {
