@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4367504, g: 0.48436606, b: 0.5646179, a: 1}
+  m_IndirectSpecularColor: {r: 0.43675077, g: 0.48436666, b: 0.56461805, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6570439831618502011, guid: ea4eeec564c0479428c2fcb70c93b669, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -567
       objectReference: {fileID: 0}
     - target: {fileID: 6570439831618502011, guid: ea4eeec564c0479428c2fcb70c93b669, type: 3}
       propertyPath: m_LocalRotation.w
@@ -272,7 +272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905584aa7548dc84a9ed72da99d97e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottlePrefab: {fileID: 625910839}
 --- !u!108 &625910842
 Light:
   m_ObjectHideFlags: 0

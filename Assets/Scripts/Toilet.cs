@@ -96,7 +96,7 @@ public class Toilet : MonoBehaviour
         }
 
     }
-#region MoveMethods
+    #region MoveMethods
     private void MoveTowards()
     {
         transform.Translate(0, 0, movespeed * Time.deltaTime);
@@ -119,7 +119,7 @@ public class Toilet : MonoBehaviour
     }
 
     #endregion
- 
+
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
@@ -128,6 +128,11 @@ public class Toilet : MonoBehaviour
     public void TakeHealth(float regenAmount)
     {
         CurrentHealth += regenAmount;
+        healthbar.SetHealth(CurrentHealth);
+    }
+    public void TakeStamina(float regenAmount)
+    {
+        //+= regenAmount;
         healthbar.SetHealth(CurrentHealth);
     }
 

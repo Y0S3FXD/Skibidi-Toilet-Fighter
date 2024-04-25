@@ -33,7 +33,7 @@ Da der ønskes at lave en ny postion, indenfor arenaen er VectorGenerator lavet,
 
 Når der collides med et Toilet tjekkes der om der er snakke om et toilet ved at få componentet fra gameobjectet og putte dne igennem GiveHealth som tager et Toilet som prametre og give tilgåt funktion TakeHEalth under mutanten som har en float som parameter. Derved øges CurrentHealth.
 ### Toilet
-DA der er meget i toilettet gennemgåes der kun det vigtigste her:
+Da der er meget i toilettet gennemgåes der kun det vigtigste her:
 - Movement og spillere
 - Vigtige variable
 #### Movement og spillere
