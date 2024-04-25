@@ -30,6 +30,8 @@ public class Toilet : MonoBehaviour
         CurrentHealth = MaxHealth;
         healthbar.SetMaxHealth(MaxHealth);
         rb = GetComponent<Rigidbody>();
+        CurrentStamina = MaxStamina;
+        staminabar.SetStamina(MaxStamina);
     }
 
     // Update is called once per frame
