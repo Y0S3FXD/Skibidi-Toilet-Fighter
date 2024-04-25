@@ -8,6 +8,7 @@ using UnityEngine;
 public class Toilet : MonoBehaviour
 {
     public float Health = 100f;
+    public float Stamina = 100f;
     public bool IsPlayerOne = false;
     public Toilet Opponent;
     public Toilet MainBody;
@@ -15,6 +16,9 @@ public class Toilet : MonoBehaviour
     public HealthBar healthbar;
     public float CurrentHealth;
     public float MaxHealth = 100;
+    public StaminaBar staminabar;
+    public float CurrentStamina;
+    public float MaxStamina = 100;
     private Rigidbody rb;
     private Vector3 arenaBounds = new Vector3(5f, 0f, 5f);
 
@@ -129,6 +133,16 @@ public class Toilet : MonoBehaviour
     {
         CurrentHealth += regenAmount;
         healthbar.SetHealth(CurrentHealth);
+    }
+    public void TakeStamina(float stamina)
+    {
+        CurrentStamina += stamina;
+        staminabar.SetStamina(CurrentStamina);
+    }
+    public void UseStamina(float stamina)
+    {
+        CurrentStamina -= stamina;
+        staminabar.SetStamina(CurrentStamina);
     }
 
 }
