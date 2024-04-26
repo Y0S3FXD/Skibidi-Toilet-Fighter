@@ -7,7 +7,7 @@ public class Cigar : AItem
     public override void Give(Toilet ToiletToHeal)
     {
         ToiletToHeal.TakeStamina(10.0f);
-        Debug.Log("Toilet given helath by bottle");
+        Debug.Log("Toilet given stamina by bottle");
     }
     public override void CreateItem(Vector3 position)
     {

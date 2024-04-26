@@ -7,18 +7,18 @@ using UnityEngine;
 
 public class Toilet : MonoBehaviour
 {
-    public float Health = 100f;
-    public float Stamina = 100f;
+    private float Health = SliderScript.MaxHealth;
+    private float Stamina = SliderScript.MaxStamina;
     public bool IsPlayerOne = false;
     public Toilet Opponent;
     public Toilet MainBody;
     public float movespeed = 5.25f;
     public HealthBar healthbar;
-    public float CurrentHealth;
-    public float MaxHealth = 100;
+    private float CurrentHealth;
+    private float MaxHealth = SliderScript.MaxHealth;
     public StaminaBar staminabar;
     public float CurrentStamina;
-    public float MaxStamina = 100;
+    private float MaxStamina = SliderScript.MaxStamina;
     private Rigidbody rb;
     private Vector3 arenaBounds = new Vector3(5f, 0f, 5f);
 
@@ -51,7 +51,7 @@ public class Toilet : MonoBehaviour
         if (transform.position.y < -10f)
         {
             //If the y-poston of the toilet is under -10 the toilet dies as its health is reduced
-            CurrentHealth = -100f;
+            CurrentHealth = 0;
             Debug.Log("Toilet died from falling");
         }
 
@@ -144,5 +144,4 @@ public class Toilet : MonoBehaviour
         CurrentStamina -= stamina;
         staminabar.SetStamina(CurrentStamina);
     }
-
 }
