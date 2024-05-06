@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3899366430556875729}
   m_LocalRotation: {x: 0.017751679, y: 0.017142592, z: 0.017142594, w: 0.99954855}
-  m_LocalPosition: {x: 0, y: 0, z: 4981}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d261190acacf5408985954e15d85d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CigarPrefab: {fileID: 3899366430556875729}
+  ItemPrefab: {fileID: 3899366430556875729}
 --- !u!136 &-7117027093958971840
 CapsuleCollider:
   m_ObjectHideFlags: 0
