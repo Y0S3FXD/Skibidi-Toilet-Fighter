@@ -1,42 +1,24 @@
 @startuml
-class items{}
-class GameController{
-    
-}
-
-class Toilet{
-    + string name
-    + List<items> items
-    + public bool IsPlayerOne = false
-    --
-    + Toilet(string name, int health, int stamina)
-    --
-    + void Start()
-}
-
-class Piss{
-}
-
-class Head{
+interface IAttack {
 
 }
-Class HeadPunch{
+
+abstract class AAttack {
 }
 
-class Arena{
-    Void Create_Arena()
-}
-class Attacks{
- Random GiveDamage(int Dmg)
-}
-class Stamina{
+class Piss {
 
 }
-Piss *-- Stamina
-Attacks *--  Piss
-Attacks *--  HeadPunch
-GameController ..> Attacks
-GameController ..> Arena
-GameController ..> TOILET
-TOILET ..> Head
+
+class Shit {
+}
+
+class Toilet {
+}
+
+IAttack --|> AAttack
+AAttack --|>  Piss
+AAttack --|>  Shit
+Piss --|> Toilet
+Shit --|> Toilet
 @enduml

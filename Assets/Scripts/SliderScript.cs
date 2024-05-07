@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class SliderScript : MonoBehaviour
 {
     public Slider StaminaSlider;
@@ -13,6 +14,7 @@ public class SliderScript : MonoBehaviour
 
     public TMP_Text StaminaMeter;
     public TMP_Text HealthMeter;
+
     void Update()
     {
         StaminaMeter.text = "Stamina: " + StaminaSlider.value.ToString();
@@ -20,6 +22,5 @@ public class SliderScript : MonoBehaviour
         MaxStamina = StaminaSlider.value;
         MaxHealth = HealthSlider.value;
         Debug.Log(MaxHealth);
-
     }
 }

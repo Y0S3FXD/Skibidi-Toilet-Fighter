@@ -29,6 +29,7 @@ public class Toilet : MonoBehaviour
     {
         CurrentHealth = MaxHealth;
         healthbar.SetMaxHealth(MaxHealth);
+        staminabar.SetMaxStamina(MaxStamina);
         rb = GetComponent<Rigidbody>();
     }
 
@@ -57,7 +58,6 @@ public class Toilet : MonoBehaviour
 
         if (IsPlayerOne)
         {
-
             if (Input.GetKey(KeyCode.W))
             {
                 MoveTowards();
@@ -78,8 +78,6 @@ public class Toilet : MonoBehaviour
         }
         else if (IsPlayerOne == false)
         {
-
-
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 MoveTowards();
@@ -98,8 +96,8 @@ public class Toilet : MonoBehaviour
                 MoveToRight();
             }
         }
-
     }
+
     #region MoveMethods
     private void MoveTowards()
     {
@@ -109,8 +107,8 @@ public class Toilet : MonoBehaviour
     private void MoveAwayFrom()
     {
         transform.Translate(0, 0, movespeed * -Time.deltaTime);
-
     }
+
     private void MoveToLeft()
     {
         transform.Rotate(0, 90 * -Time.deltaTime, 0); // Adjust the rotation speed as needed
@@ -119,7 +117,6 @@ public class Toilet : MonoBehaviour
     private void MoveToRight()
     {
         transform.Rotate(0, 90 * Time.deltaTime, 0); // Adjust the rotation speed as needed
-
     }
 
     #endregion
@@ -129,16 +126,19 @@ public class Toilet : MonoBehaviour
         CurrentHealth -= damage;
         healthbar.SetHealth(CurrentHealth);
     }
+
     public void TakeHealth(float regenAmount)
     {
         CurrentHealth += regenAmount;
         healthbar.SetHealth(CurrentHealth);
     }
+
     public void TakeStamina(float stamina)
     {
         CurrentStamina += stamina;
         staminabar.SetStamina(CurrentStamina);
     }
+
     public void UseStamina(float stamina)
     {
         CurrentStamina -= stamina;
