@@ -4856,7 +4856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cfa0ae1c116a340a372c97b42bca9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BelongsTo: {fileID: 0}
+  BelongsTo: {fileID: 105618957795830122}
   PissParticle: {fileID: 105618957795830120}
   isEnemy: 0
 --- !u!54 &-4210864389235837353
@@ -5125,6 +5125,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 105618957795830167}
     m_Modifications:
+    - target: {fileID: 5808193893199821185, guid: 11b19c48f2a1c774db8d916d3992a27f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -250.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808193893199821185, guid: 11b19c48f2a1c774db8d916d3992a27f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808193893199821187, guid: 11b19c48f2a1c774db8d916d3992a27f, type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808193893560768650, guid: 11b19c48f2a1c774db8d916d3992a27f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4000015
+      objectReference: {fileID: 0}
     - target: {fileID: 5808193894307094771, guid: 11b19c48f2a1c774db8d916d3992a27f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

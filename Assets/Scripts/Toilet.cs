@@ -8,7 +8,7 @@ using UnityEngine;
 public class Toilet : MonoBehaviour
 {
     private float Health = SliderScript.MaxHealth;
-    private float Stamina = SliderScript.MaxStamina;
+    public float Stamina = SliderScript.MaxStamina;
     public bool IsPlayerOne = false;
     public Toilet Opponent;
     public Toilet MainBody;
@@ -31,6 +31,8 @@ public class Toilet : MonoBehaviour
         healthbar.SetMaxHealth(MaxHealth);
         staminabar.SetMaxStamina(MaxStamina);
         rb = GetComponent<Rigidbody>();
+        CurrentStamina = MaxStamina;
+        staminabar.SetStamina(MaxStamina);
     }
 
     // Update is called once per frame
