@@ -8,7 +8,7 @@ using UnityEngine;
 public class Toilet : MonoBehaviour
 {
     private float Health = SliderScript.MaxHealth;
-    private float Stamina = SliderScript.MaxStamina;
+    public float Stamina = SliderScript.MaxStamina;
     public bool IsPlayerOne = false;
     public Toilet Opponent;
     public Toilet MainBody;

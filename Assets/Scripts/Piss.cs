@@ -24,11 +24,11 @@ public class Piss : Attacks
             PerformAttack();
         }   
         // Handling player attacks
-        else if (!isEnemy && Input.GetKeyDown(KeyCode.Space))
+        else if (!isEnemy && Input.GetKeyDown(KeyCode.Space) && canShoot && BelongsTo.Stamina > StaminaCost)
         {
             Debug.Log($"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}");
 
-            PissParticle.Play();
+            PerformAttack();
         }
 
         // Stopping the particle system when the button is released
