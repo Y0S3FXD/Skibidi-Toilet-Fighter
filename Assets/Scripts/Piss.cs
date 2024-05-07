@@ -17,14 +17,14 @@ public class Piss : Attacks
     void Update()
     {
         // Handling enemy attacks
-        if (isEnemy && Input.GetButtonDown("Fire1") && canShoot && BelongsTo.Stamina > StaminaCost)
+        if (isEnemy && Input.GetButtonDown("Fire1") && canShoot && BelongsTo.CurrentStamina > StaminaCost)
         {
             Debug.Log($"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}");
 
             PerformAttack();
         }   
         // Handling player attacks
-        else if (!isEnemy && Input.GetKeyDown(KeyCode.Space) && canShoot && BelongsTo.Stamina > StaminaCost)
+        else if (!isEnemy && Input.GetKeyDown(KeyCode.Space) && canShoot && BelongsTo.CurrentStamina > StaminaCost)
         {
             Debug.Log($"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}");
 
