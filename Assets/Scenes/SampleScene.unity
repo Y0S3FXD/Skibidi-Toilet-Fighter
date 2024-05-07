@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43675077, g: 0.48436666, b: 0.56461805, a: 1}
+  m_IndirectSpecularColor: {r: 0.4367504, g: 0.48436606, b: 0.5646179, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -327,6 +327,10 @@ PrefabInstance:
     - target: {fileID: 8472175324786766269, guid: ea4eeec564c0479428c2fcb70c93b669, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8734887030586088786, guid: ea4eeec564c0479428c2fcb70c93b669, type: 3}
+      propertyPath: BottlePrefab
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4eeec564c0479428c2fcb70c93b669, type: 3}

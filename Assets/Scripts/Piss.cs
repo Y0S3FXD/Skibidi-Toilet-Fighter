@@ -13,11 +13,11 @@ public class Piss : AAttack
 
     void Update()
     {
-        if (BelongsTo.IsPlayerOne == true && Input.GetKey(KeyCode.Space))
+        if (BelongsTo.IsPlayerOne && Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
         }
-        else if (BelongsTo.IsPlayerOne == true && Input.GetKey(KeyCode.Mouse0))
+        else if (!BelongsTo.IsPlayerOne && Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
         }
@@ -43,7 +43,6 @@ public class Piss : AAttack
         else if (!isEnemy && Input.GetKeyDown(KeyCode.Space)) // Anden spiller bruger space
         {
             PissParticle.Play();
-
         }
 
         if ((isEnemy && Input.GetButtonUp("Fire1")) || (!isEnemy && Input.GetKeyUp(KeyCode.Space)))

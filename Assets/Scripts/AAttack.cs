@@ -1,9 +1,13 @@
 using System.Security.AccessControl;
 using UnityEngine;
 using System;
+using System.Threading;
+
+using System.Threading.Tasks;
 
 public abstract class AAttack : MonoBehaviour, IAttack
 {
+
     public Toilet BelongsTo;
     public float StaminaUsage;
     public float DamageAmount;
@@ -25,10 +29,13 @@ public abstract class AAttack : MonoBehaviour, IAttack
         AttackParticle = GetComponent<ParticleSystem>();
     }
 
-    public void Attack()
+    public async void Attack()
     {
         BelongsTo.UseStamina(StaminaUsage);
         AttackParticle.Play();
+        await Task.Delay(1000);
+        AttackParticle.Stop();
+
     }
 
     void Update()

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5071710748879920476}
   - component: {fileID: 8734887030586088786}
   m_Layer: 0
-  m_Name: BottlePrefab
+  m_Name: bottlePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,4 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2dc76431b113048a462f22a205ac1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   ItemPrefab: {fileID: 4077178618142262438}
+=======
+  BottlePrefab: {fileID: 4077178618142262438}
+>>>>>>> Stashed changes
