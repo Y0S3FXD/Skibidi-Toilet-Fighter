@@ -1,4 +1,3 @@
-
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,9 +5,7 @@ abstract public class AItem : MonoBehaviour, IItem
 {
     public GameObject ItemPrefab;
 
-    public virtual void Give(Toilet toilet)
-    {
-    }
+    public virtual void Give(Toilet toilet) { }
 
     public virtual void CreateItem(Vector3 position)
     {
@@ -43,5 +40,4 @@ abstract public class AItem : MonoBehaviour, IItem
             }
         }
     }
-
 }
