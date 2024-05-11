@@ -10,8 +10,8 @@ abstract public class AItem : MonoBehaviour, IItem
     public virtual void CreateItem(Vector3 position)
     {
         Debug.Log("New item created");
-        GameObject Cigar = Instantiate(ItemPrefab, position, Quaternion.identity);
-        Cigar.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        GameObject NewItem = Instantiate(ItemPrefab, position, Quaternion.identity);
+        NewItem.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     public virtual Vector3 VectorGenerator()

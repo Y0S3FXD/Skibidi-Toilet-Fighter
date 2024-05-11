@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 public abstract class AAttack : MonoBehaviour, IAttack
 {
-
     public Toilet BelongsTo;
     public float StaminaUsage;
     public float DamageAmount;
@@ -35,21 +34,17 @@ public abstract class AAttack : MonoBehaviour, IAttack
         AttackParticle.Play();
         await Task.Delay(1000);
         AttackParticle.Stop();
-
     }
 
-    void Update()
+    void OnParticleCollision(GameObject collision)
     {
-        void OnParticleCollision(Collision collision)
+        GameObject collidedObject = collision.gameObject;
+        if (collidedObject.CompareTag("Toilet"))
         {
-            GameObject collidedObject = collision.gameObject;
-            if (collidedObject.CompareTag("Toilet"))
+            Toilet Toilet = collidedObject.GetComponent<Toilet>();
+            if (Toilet != null && Toilet != BelongsTo)
             {
-                Toilet Toilet = collidedObject.GetComponent<Toilet>();
-                if (Toilet != null && Toilet != BelongsTo)
-                {
-                    TakeDamage(Toilet, DamageAmount);
-                }
+                TakeDamage(Toilet, DamageAmount);
             }
         }
     }
