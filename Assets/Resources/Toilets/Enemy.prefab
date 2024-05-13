@@ -4831,18 +4831,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68950683e4514464c880c8ed42e7a05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
   Stamina: 100
   IsPlayerOne: 0
   Opponent: {fileID: 105618957795830122, guid: b6fa2ef68859ea74cb366d0e7c5027f4, type: 3}
   MainBody: {fileID: 6109153378770060932}
   movespeed: 3
   healthbar: {fileID: 8899975313981711862}
-  CurrentHealth: 0
-  MaxHealth: 100
   staminabar: {fileID: 7858801468386835863}
   CurrentStamina: 0
-  MaxStamina: 100
   rotationSpeed: 100
 --- !u!114 &6109153378770060936
 MonoBehaviour:
@@ -4857,8 +4853,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BelongsTo: {fileID: 6109153378770060932}
-  PissParticle: {fileID: 6109153378770060934}
+  AttackParticle: {fileID: 6109153378770060934}
   isEnemy: 1
+  StaminaCost: 10
+  canShoot: 1
 --- !u!54 &-4602092904269338392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4887,7 +4885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5458046b34d8d94f9bb3eaeea29ba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BelongsTo: {fileID: 6109153378770060932}
 --- !u!1 &6109153379073898721
 GameObject:
   m_ObjectHideFlags: 0

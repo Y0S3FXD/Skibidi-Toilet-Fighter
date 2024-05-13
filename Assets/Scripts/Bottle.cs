@@ -1,4 +1,5 @@
 using UnityEngine;
+
 //originally this code used both Start() and Update() however that was causing issues
 
 public class Bottle : AItem
@@ -9,4 +10,3 @@ public class Bottle : AItem
         Debug.Log("Toilet given helath by bottle");
     }
 }
-
