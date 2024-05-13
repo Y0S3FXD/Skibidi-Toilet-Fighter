@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class Body : MonoBehaviour
 {
+    /*
     public Toilet BelongsTo;
     private List<ParticleCollisionEvent> collisionEvents;
 
@@ -27,5 +28,5 @@ public class Body : MonoBehaviour
                 i++;
             }
         }
-    }
+    }*/
 }

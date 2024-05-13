@@ -1,8 +1,9 @@
 using UnityEngine;
-using System.Collections; // Import for coroutines
+using System.Collections;
 
-public class Piss : Attacks
+public class Piss : AAttack
 {
+    /*
     public ParticleSystem PissParticle;
     public bool isEnemy;
 
@@ -50,5 +51,5 @@ public class Piss : Attacks
         canShoot = false;
         yield return new WaitForSeconds(3f); // Wait for 3 seconds
         canShoot = true;
-    }
+    }*/
 }
