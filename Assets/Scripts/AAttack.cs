@@ -9,8 +9,8 @@ public abstract class AAttack : MonoBehaviour
     public Toilet BelongsTo;
     public ParticleSystem AttackParticle;
     public bool isEnemy;
-
-    public float StaminaCost = 10f;
+    public float StaminaCost = 10.0f;
+    public float AttackDamage = 10.0f;
     public bool canShoot = true;
 
     void Start()
@@ -47,7 +47,7 @@ public abstract class AAttack : MonoBehaviour
             {
                 Debug.Log("Stamina hit an : " + BelongsTo.gameObject.name);
                 // Here you can handle the collision event, e.g., apply damage
-                BelongsTo.TakeDamage(1f); // Apply 10 damage to the character
+                BelongsTo.TakeDamage(AttackDamage); // Apply 10 damage to the character
                 i++;
             }
         }

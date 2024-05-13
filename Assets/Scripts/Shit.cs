@@ -1,13 +1,19 @@
 using UnityEngine;
 using System.Collections;
+
 public class Shit : AAttack
 {
+    void awake()
+    {
+        StaminaCost = 20f;
+        AttackDamage = 3f;
+    }
     void Update()
     {
         // Handling enemy attacks
         if (
             isEnemy
-            && Input.GetButtonDown("Fire2")
+            && Input.GetKeyDown("Fire2")
             && canShoot
             && BelongsTo.CurrentStamina > StaminaCost
         )
@@ -18,7 +24,7 @@ public class Shit : AAttack
 
             PerformAttack();
         }
-        // Handling player attacks
+        // Handling player1 attacks
         else if (
             !isEnemy
             && Input.GetKeyDown(KeyCode.C)

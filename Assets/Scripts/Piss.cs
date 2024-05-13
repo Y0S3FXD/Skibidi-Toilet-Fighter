@@ -1,8 +1,12 @@
 using UnityEngine;
 using System.Collections;
-
 public class Piss : AAttack
 {
+    void awake()
+    {
+        StaminaCost = 10f;
+        AttackDamage = 2f;
+    }
     void Update()
     {
         // Handling enemy attacks
