@@ -21,7 +21,7 @@ public class Piss : AAttack
                 $"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}"
             );
 
-            PerformAttack();
+            AttackParticle.Play();
         }
         // Handling player attacks
         else if (
@@ -35,7 +35,7 @@ public class Piss : AAttack
                 $"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}"
             );
 
-            PerformAttack();
+            AttackParticle.Play();
         }
 
         // Stopping the particle system when the button is released

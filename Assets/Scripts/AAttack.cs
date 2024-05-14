@@ -29,7 +29,7 @@ public abstract class AAttack : MonoBehaviour
     IEnumerator AttackCooldown()
     {
         canShoot = false;
-        yield return new WaitForSeconds(3f); // Wait for 3 seconds
+        yield return new WaitForSeconds(3f); 
         canShoot = true;
     }
 

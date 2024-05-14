@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6940770650946730241
+--- !u!1 &5788912250766939478
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 105618957795830167}
-  - component: {fileID: 105618957795830120}
-  - component: {fileID: 105618957795830121}
-  - component: {fileID: 105618957795830122}
-  - component: {fileID: 105618957795830166}
-  - component: {fileID: -4210864389235837353}
-  - component: {fileID: 6527013155876661233}
+  - component: {fileID: 4577505307221727314}
+  - component: {fileID: 6959881579626916426}
+  - component: {fileID: 8897279564100125610}
+  - component: {fileID: 9113548821643313633}
   m_Layer: 0
-  m_Name: Toilet
-  m_TagString: Toilet
+  m_Name: psps
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &105618957795830167
+--- !u!4 &4577505307221727314
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6940770650946730241}
-  m_LocalRotation: {x: 0, y: -0.119703576, z: 0, w: 0.9928097}
-  m_LocalPosition: {x: -1.67, y: -0.19, z: -21.2}
-  m_LocalScale: {x: 3.46, y: 2, z: 2}
+  m_GameObject: {fileID: 5788912250766939478}
+  m_LocalRotation: {x: -0, y: 0.119703576, z: -0, w: 0.9928097}
+  m_LocalPosition: {x: -0.046, y: 0.22, z: 0.885}
+  m_LocalScale: {x: 3.2576585, y: 0.83, z: 0.41296875}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 105618957462116106}
-  - {fileID: 2779904573469981657}
-  - {fileID: 4739516410406007220}
-  - {fileID: 328433020215982524}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 105618957795830167}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -13.75, z: 0}
---- !u!198 &105618957795830120
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &6959881579626916426
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6940770650946730241}
+  m_GameObject: {fileID: 5788912250766939478}
   serializedVersion: 8
   lengthInSec: 999
   simulationSpeed: 1
@@ -677,7 +670,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0.02, y: 0.56, z: 1.14}
     m_Rotation: {x: 0, y: -90, z: 0}
-    m_Scale: {x: 0.63, y: 0, z: 0}
+    m_Scale: {x: 1.1, y: 0, z: 0}
     placementMode: 1
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -756,7 +749,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.13
+      value: 0.1
       mode: 0
       spread: 0
       speed:
@@ -4748,14 +4741,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &105618957795830121
+--- !u!199 &8897279564100125610
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6940770650946730241}
+  m_GameObject: {fileID: 5788912250766939478}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -4820,6 +4813,64 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &9113548821643313633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5788912250766939478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cfa0ae1c116a340a372c97b42bca9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BelongsTo: {fileID: 105618957795830122}
+  AttackParticle: {fileID: 6959881579626916426}
+  isEnemy: 0
+  StaminaCost: 10
+  AttackDamage: 10
+  canShoot: 1
+--- !u!1 &6940770650946730241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105618957795830167}
+  - component: {fileID: 105618957795830122}
+  - component: {fileID: 105618957795830166}
+  - component: {fileID: -4210864389235837353}
+  - component: {fileID: 6527013155876661233}
+  m_Layer: 0
+  m_Name: Toilet
+  m_TagString: Toilet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &105618957795830167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6940770650946730241}
+  m_LocalRotation: {x: 0, y: -0.119703576, z: 0, w: 0.9928097}
+  m_LocalPosition: {x: -1.67, y: -0.19, z: -21.2}
+  m_LocalScale: {x: 3.46, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4577505307221727314}
+  - {fileID: 105618957462116106}
+  - {fileID: 2779904573469981657}
+  - {fileID: 4739516410406007220}
+  - {fileID: 328433020215982524}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -13.75, z: 0}
 --- !u!114 &105618957795830122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4848,13 +4899,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6940770650946730241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02cfa0ae1c116a340a372c97b42bca9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BelongsTo: {fileID: 105618957795830122}
-  AttackParticle: {fileID: 105618957795830120}
+  AttackParticle: {fileID: 0}
   isEnemy: 0
   StaminaCost: 10
   AttackDamage: 10
@@ -4919,7 +4970,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105618957795830167}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &105618957462116104
 MeshFilter:
@@ -4993,7 +5044,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3755173912402364188, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3755173912402364188, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5033,6 +5084,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755173912402364188, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095796382294301175, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8574031769805524970, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
@@ -5115,7 +5170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 469739955361187710, guid: b9b72f46cc2616f4c83c8e7f6c79af86, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 469739955361187710, guid: b9b72f46cc2616f4c83c8e7f6c79af86, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5248,7 +5303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5808193894493133294, guid: 11b19c48f2a1c774db8d916d3992a27f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5808193894493133294, guid: 11b19c48f2a1c774db8d916d3992a27f, type: 3}
       propertyPath: m_AnchorMax.x
