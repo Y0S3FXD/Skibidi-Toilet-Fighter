@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+
 public class Piss : AAttack
 {
     void awake()
@@ -7,6 +8,7 @@ public class Piss : AAttack
         StaminaCost = 10f;
         AttackDamage = 2f;
     }
+
     void Update()
     {
         // Handling enemy attacks
@@ -21,7 +23,7 @@ public class Piss : AAttack
                 $"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}"
             );
 
-            AttackParticle.Play();
+            PerformAttack();
         }
         // Handling player attacks
         else if (
@@ -35,7 +37,7 @@ public class Piss : AAttack
                 $"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}"
             );
 
-            AttackParticle.Play();
+            PerformAttack();
         }
 
         // Stopping the particle system when the button is released

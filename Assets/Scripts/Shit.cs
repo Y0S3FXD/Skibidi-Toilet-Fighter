@@ -8,6 +8,7 @@ public class Shit : AAttack
         StaminaCost = 20f;
         AttackDamage = 3f;
     }
+
     void Update()
     {
         // Handling enemy attacks
@@ -22,7 +23,7 @@ public class Shit : AAttack
                 $"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}"
             );
 
-            AttackParticle.Play();
+            PerformAttack();
         }
         // Handling player1 attacks
         else if (
@@ -36,7 +37,7 @@ public class Shit : AAttack
                 $"Current Stamina: {BelongsTo.CurrentStamina}, Stamina Cost: {StaminaCost}, Can Shoot: {canShoot}"
             );
 
-            AttackParticle.Play();
+            PerformAttack();
         }
 
         // Stopping the particle system when the button is released

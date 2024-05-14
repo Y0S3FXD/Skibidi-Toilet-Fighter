@@ -21,15 +21,15 @@ public abstract class AAttack : MonoBehaviour
 
     public void PerformAttack()
     {
-        AttackParticle.Play();
         BelongsTo.UseStamina(StaminaCost);
+        AttackParticle.Play();
         StartCoroutine(AttackCooldown());
     }
 
     IEnumerator AttackCooldown()
     {
         canShoot = false;
-        yield return new WaitForSeconds(3f); 
+        yield return new WaitForSeconds(3f);
         canShoot = true;
     }
 
