@@ -4843,6 +4843,7 @@ GameObject:
   - component: {fileID: 6109153378770060932}
   - component: {fileID: -4602092904269338392}
   - component: {fileID: 6050620285392599693}
+  - component: {fileID: 3803202936412585787}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Toilet
@@ -4919,6 +4920,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5458046b34d8d94f9bb3eaeea29ba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3803202936412585787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6109153378770060930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02cfa0ae1c116a340a372c97b42bca9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BelongsTo: {fileID: 6109153378770060932}
+  AttackParticle: {fileID: 3110077406405922997}
+  isEnemy: 1
+  StaminaCost: 10
+  AttackDamage: 10
+  canShoot: 1
 --- !u!1 &6109153379073898721
 GameObject:
   m_ObjectHideFlags: 0
