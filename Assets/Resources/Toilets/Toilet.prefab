@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8897279564100125610}
   - component: {fileID: 9113548821643313633}
   m_Layer: 0
-  m_Name: psps
+  m_Name: PissAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4841,7 +4841,6 @@ GameObject:
   m_Component:
   - component: {fileID: 105618957795830167}
   - component: {fileID: 105618957795830122}
-  - component: {fileID: 105618957795830166}
   - component: {fileID: -4210864389235837353}
   - component: {fileID: 6527013155876661233}
   m_Layer: 0
@@ -4892,24 +4891,6 @@ MonoBehaviour:
   staminabar: {fileID: 146945431239655104}
   CurrentStamina: 0
   rotationSpeed: 100
---- !u!114 &105618957795830166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6940770650946730241}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02cfa0ae1c116a340a372c97b42bca9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BelongsTo: {fileID: 105618957795830122}
-  AttackParticle: {fileID: 0}
-  isEnemy: 0
-  StaminaCost: 10
-  AttackDamage: 10
-  canShoot: 1
 --- !u!54 &-4210864389235837353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5089,6 +5070,14 @@ PrefabInstance:
     - target: {fileID: 7095796382294301175, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095796382294301175, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095796382294301175, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8574031769805524970, guid: 3a30ae16b5ab1924f811d21ea561e891, type: 3}
       propertyPath: m_Name

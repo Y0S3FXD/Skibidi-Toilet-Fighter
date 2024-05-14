@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Shit : AAttack
 {
-    void awake()
+    void Awake()
     {
         StaminaCost = 20f;
         AttackDamage = 3f;

@@ -37,6 +37,7 @@ public abstract class AAttack : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
+        Debug.Log("Particle hit something");
         ParticleSystem particleSystem = other.GetComponent<ParticleSystem>();
         if (particleSystem)
         {
@@ -46,8 +47,7 @@ public abstract class AAttack : MonoBehaviour
             while (i < numCollisionEvents)
             {
                 Debug.Log("Stamina hit an : " + BelongsTo.gameObject.name);
-                // Here you can handle the collision event, e.g., apply damage
-                BelongsTo.TakeDamage(AttackDamage); // Apply 10 damage to the character
+                BelongsTo.TakeDamage(AttackDamage);
                 i++;
             }
         }
