@@ -1,24 +1,48 @@
 @startuml
-interface IAttack {
 
+interface IAttack {
+    +void PerformAttack()
 }
 
 abstract class AAttack {
-}
-
-class Piss {
-
+    +Toilet BelongsTo
+    +ParticleSystem AttackParticle
+    +bool isEnemy
+    +float StaminaCost
+    +float AttackDamage
+    +bool canShoot
+    +void Start()
 }
 
 class Shit {
 }
 
-class Toilet {
+class Piss {
 }
 
-IAttack --|> AAttack
-AAttack --|>  Piss
-AAttack --|>  Shit
-Piss --|> Toilet
-Shit --|> Toilet
+interface IItem {
+    +void Give(Toilet toilet)
+    +void CreateItem(Vector3 position)
+    +Vector3 VectorGenerator()
+}
+
+abstract class AItem {
+}
+
+class Bottle {
+    +override void Give(Toilet ToiletToHeal)
+}
+
+class Cigar {
+    +void Awake()
+    +override void Give(Toilet ToiletToHeal)
+}
+
+IAttack <|.. AAttack
+AAttack <|-- Shit
+AAttack <|-- Piss
+IItem <|.. AItem
+AItem <|-- Bottle
+AItem <|-- Cigar
+
 @enduml

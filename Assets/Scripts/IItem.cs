@@ -4,6 +4,6 @@ using UnityEngine;
 public interface IItem
 {
     void Give(Toilet ToiletToHeal);
-    public void CreateItem(Vector3 position);
-    public Vector3 VectorGenerator();
+    void CreateItem(Vector3 position);
+    Vector3 VectorGenerator();
 }

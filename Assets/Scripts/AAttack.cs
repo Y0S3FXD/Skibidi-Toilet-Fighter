@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public abstract class AAttack : MonoBehaviour
+public abstract class AAttack : MonoBehaviour, IAttack
 {
     public Toilet BelongsTo;
     public ParticleSystem AttackParticle;
