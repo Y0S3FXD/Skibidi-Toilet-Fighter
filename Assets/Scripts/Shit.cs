@@ -14,7 +14,7 @@ public class Shit : AAttack
         // Handling enemy attacks
         if (
             isEnemy
-            && Input.GetKeyDown(KeyCode.V)
+            && Input.GetButtonDown("Fire2")
             && canShoot
             && BelongsTo.CurrentStamina > StaminaCost
         )
@@ -41,7 +41,7 @@ public class Shit : AAttack
         }
 
         // Stopping the particle system when the button is released
-        if ((isEnemy && Input.GetKeyUp(KeyCode.V)) || (!isEnemy && Input.GetKeyUp(KeyCode.C)))
+        if ((isEnemy && Input.GetButtonUp("Fire2")) || (!isEnemy && Input.GetKeyUp(KeyCode.C)))
         {
             AttackParticle.Stop();
         }
